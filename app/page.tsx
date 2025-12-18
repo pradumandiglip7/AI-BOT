@@ -2,7 +2,10 @@
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/ui/header";
+import { ElectroBorder } from "@/components/ui/electro-border";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   TrendingUp,
   Zap,
@@ -69,21 +72,17 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all duration-300"
+                  <GradientButton
+                    onClick={() => window.location.href = '/get-signals'}
                   >
-                    <Send className="w-5 h-5 mr-2" />
-                    Add to Telegram
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-accent text-accent hover:bg-accent/10 hover:border-accent/80"
+                    Get Signals
+                  </GradientButton>
+                  <GradientButton
+                    variant="variant"
+                    onClick={() => window.location.href = '/provide-signals'}
                   >
-                    <Users className="w-5 h-5 mr-2" />
-                    Join Premium Group
-                  </Button>
+                    Provide Signals
+                  </GradientButton>
                 </div>
               </motion.div>
 
@@ -472,6 +471,74 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section id="pricing" className="relative py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Simple, Transparent Pricing
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Choose the plan that fits your trading needs
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Free Plan */}
+              <PricingCard
+                title="Free"
+                price="$0"
+                period="forever"
+                features={[
+                  "5 signals per day",
+                  "Basic indicators",
+                  "Email support",
+                  "Community access",
+                ]}
+                borderColor="#6B7280"
+              />
+
+              {/* Premium Plan */}
+              <PricingCard
+                title="Premium"
+                price="$49"
+                period="per month"
+                features={[
+                  "Unlimited signals",
+                  "Advanced AI analysis",
+                  "Priority support",
+                  "Exclusive channel access",
+                  "Custom alerts",
+                  "Risk management tools",
+                ]}
+                borderColor="#00D18F"
+                recommended
+              />
+
+              {/* Pro Plan */}
+              <PricingCard
+                title="Pro"
+                price="$99"
+                period="per month"
+                features={[
+                  "Everything in Premium",
+                  "1-on-1 strategy calls",
+                  "Portfolio management",
+                  "API access",
+                  "White-label options",
+                ]}
+                borderColor="#2D68FF"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer id="footer" className="relative py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-800/50">
           <div className="max-w-7xl mx-auto">
@@ -528,12 +595,88 @@ export default function Home() {
 
             <div className="pt-8 border-t border-gray-800/50 text-center">
               <p className="text-gray-500">
-                © 2024 AI Market Bot. All rights reserved. Trading involves risk. Past performance does not guarantee future results.
+                © 2025 AI Market Bot. All rights reserved. Trading involves risk. Past performance does not guarantee future results.
               </p>
             </div>
           </div>
         </footer>
       </div>
     </BackgroundGradientAnimation>
+  );
+}
+
+// Pricing Card Component with ElectroBorder
+interface PricingCardProps {
+  title: string;
+  price: string;
+  period: string;
+  features: string[];
+  borderColor: string;
+  recommended?: boolean;
+}
+
+function PricingCard({ title, price, period, features, borderColor, recommended }: PricingCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="relative"
+    >
+      {recommended && (
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+          <span className="bg-accent text-white px-4 py-1 rounded-full text-sm font-bold">
+            RECOMMENDED
+          </span>
+        </div>
+      )}
+
+      <ElectroBorder
+        borderColor={borderColor}
+        borderWidth={2}
+        radius="24px"
+        effects={isHovered}
+        glow={true}
+        aura={true}
+        glowBlur={30}
+        distortion={1.2}
+        animationSpeed={1}
+      >
+        <div className="bg-gradient-to-br from-gray-900/90 via-gray-800/60 to-gray-900/90 backdrop-blur-xl rounded-3xl p-8 h-full transition-all duration-300">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+            <div className="flex items-baseline justify-center gap-1">
+              <span className="text-5xl font-bold text-white">{price}</span>
+              <span className="text-gray-400">/{period}</span>
+            </div>
+          </div>
+
+          <ul className="space-y-4 mb-8">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          <Button
+            className={`w-full ${
+              recommended
+                ? "bg-accent hover:bg-accent/90 text-white"
+                : "bg-gray-700 hover:bg-gray-600 text-white"
+            }`}
+            size="lg"
+          >
+            Get Started
+          </Button>
+        </div>
+      </ElectroBorder>
+    </motion.div>
   );
 }

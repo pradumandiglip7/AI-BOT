@@ -28,6 +28,7 @@ export function Header() {
     { label: "Features", href: "features" },
     { label: "How it Works", href: "how-it-works" },
     { label: "Technology", href: "technology" },
+    { label: "Pricing", href: "pricing" },
     { label: "Learn More", href: "footer" },
   ];
 
@@ -77,21 +78,23 @@ export function Header() {
               variant="outline"
               size="sm"
               className="border-gray-600 text-white hover:bg-gray-800"
+              onClick={() => window.location.href = '/login'}
             >
               Login
             </Button>
             <Button
               size="sm"
               className="bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/50"
+              onClick={() => window.location.href = '/signup'}
             >
-              Add to Telegram
+              Sign Up
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white p-2 hover:bg-gray-800 rounded-lg transition-colors"
+            className="lg:hidden text-white p-2 hover:bg-gray-800 rounded-lg transition-colors z-50 relative"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -103,38 +106,43 @@ export function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <motion.div
-        initial={false}
-        animate={{
-          height: isMobileMenuOpen ? "auto" : 0,
-          opacity: isMobileMenuOpen ? 1 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="lg:hidden overflow-hidden bg-secondary/98 backdrop-blur-lg border-b border-gray-800/50"
-      >
-        <div className="px-4 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollToSection(link.href)}
-              className="block w-full text-left text-gray-300 hover:text-white hover:bg-gray-800/50 px-4 py-3 rounded-lg transition-all duration-200 font-medium"
-            >
-              {link.label}
-            </button>
-          ))}
-          <div className="pt-3 space-y-2 border-t border-gray-800">
-            <Button
-              variant="outline"
-              className="w-full border-gray-600 text-white hover:bg-gray-800"
-            >
-              Login
-            </Button>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/50">
-              Add to Telegram
-            </Button>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="lg:hidden bg-secondary/98 backdrop-blur-lg border-b border-gray-800/50 relative z-40"
+        >
+          <div className="px-4 py-4 space-y-3">
+            {navLinks.map((link) => (
+              <motion.button
+                key={link.href}
+                onClick={() => scrollToSection(link.href)}
+                whileTap={{ scale: 0.98 }}
+                className="block w-full text-left text-gray-300 hover:text-white hover:bg-gray-800/50 px-4 py-3 rounded-lg transition-all duration-200 font-medium active:bg-gray-800/70 cursor-pointer"
+              >
+                {link.label}
+              </motion.button>
+            ))}
+            <div className="pt-3 space-y-2 border-t border-gray-800">
+              <Button
+                variant="outline"
+                className="w-full border-gray-600 text-white hover:bg-gray-800 cursor-pointer"
+                onClick={() => window.location.href = '/login'}
+              >
+                Login
+              </Button>
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/50 cursor-pointer"
+                onClick={() => window.location.href = '/signup'}
+              >
+                Sign Up
+              </Button>
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      )}
     </motion.header>
   );
 }

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/ui/header";
 import { ElectroBorder } from "@/components/ui/electro-border";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { TrustedTradersCarousel } from "@/components/ui/trusted-traders-carousel";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -470,6 +471,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Trusted Traders Testimonials */}
+        <TrustedTradersCarousel />
 
         {/* Pricing Section */}
         <section id="pricing" className="relative py-24 px-4 sm:px-6 lg:px-8">

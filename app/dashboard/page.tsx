@@ -20,7 +20,7 @@ export default function DashboardPage() {
     >
       <div className="min-h-screen w-full">
         {/* Role Switcher (For Demo) */}
-        <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <div className="fixed top-20 right-6 z-50 flex gap-2">
           <button
             onClick={() => setUserRole("trader")}
             className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${

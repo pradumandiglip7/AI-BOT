@@ -46,7 +46,7 @@ export const AdminDashboard = () => {
       />
       <TopNavbar userName="Admin User" notifications={12} />
 
-      <div className="ml-64 mt-16 p-6">
+      <div className="ml-64 mt-20 p-6">
         <AnimatePresence mode="wait">
           {activeTab === "dashboard" && <AdminDashboardTab key="dashboard" />}
           {activeTab === "users" && <UserManagementTab key="users" />}

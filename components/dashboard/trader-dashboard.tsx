@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sidebar } from "./sidebar";
 import { TopNavbar } from "./top-navbar";
@@ -868,9 +868,9 @@ const TradesTab = () => {
               </tr>
             </thead>
             <tbody>
-              {paged.map(t => (
-                <motion.tbody key={t.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-                  <tr onClick={() => setExpanded(expanded === t.id ? null : t.id)} className="border-b border-white/6 hover:bg-white/3 transition cursor-pointer">
+              {paged.map((t) => (
+                React.createElement(React.Fragment, { key: t.id },
+                  <motion.tr initial={{ opacity: 0 }} animate={{ opacity: 1 }} onClick={() => setExpanded(expanded === t.id ? null : t.id)} className="border-b border-white/6 hover:bg-white/3 transition cursor-pointer">
                     <td className="py-3 px-4">{t.date.toLocaleString()}</td>
                     <td className="py-3 px-4 font-semibold">{t.asset}</td>
                     <td className="py-3 px-4">
@@ -884,9 +884,9 @@ const TradesTab = () => {
                       <span className={`px-2 py-1 rounded text-xs font-bold ${t.status === "Completed" ? "bg-emerald-500/30 text-emerald-200" : t.status === "Pending" ? "bg-yellow-500/30 text-yellow-200" : "bg-red-500/30 text-red-200"}`}>{t.status}</span>
                     </td>
                     <td className="py-3 px-4 text-right"><span className="text-xs">{expanded === t.id ? "▲" : "▼"}</span></td>
-                  </tr>
-                  {expanded === t.id && (
-                    <tr className="bg-white/3 border-b border-white/6">
+                  </motion.tr>,
+                  expanded === t.id && (
+                    <motion.tr initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="bg-white/3 border-b border-white/6">
                       <td colSpan={9} className="py-4 px-4">
                         <div className="grid grid-cols-4 gap-6 text-sm">
                           <div><div className="text-gray-400">Net P&L</div><div className="text-lg font-bold text-emerald-300">${(t.total - t.fee).toFixed(2)}</div></div>
@@ -895,9 +895,9 @@ const TradesTab = () => {
                           <div><button className="px-3 py-1 rounded bg-white/5 text-sm hover:bg-white/10">Details</button></div>
                         </div>
                       </td>
-                    </tr>
-                  )}
-                </motion.tbody>
+                    </motion.tr>
+                  )
+                )
               ))}
             </tbody>
           </table>
@@ -987,9 +987,9 @@ const AnalyticsTab = () => {
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-semibold text-white">Performance</h3>
             <div className="flex items-center gap-2">
-              {("1D 1W 1M 3M 1Y ALL".split(" ") as const).map(tf => (
-                <button key={tf} onClick={() => setTimeframe(tf)} className={`px-2 py-1 text-sm rounded ${timeframe === tf ? "bg-white/8 text-white" : "text-gray-300 hover:bg-white/3"}`}>{tf}</button>
-              ))}
+              {/* {("1D 1W 1M 3M 1Y ALL".split(" ") as const).map(tf => ( */}
+                {/* <button key={tf} onClick={() => setTimeframe(tf)} className={`px-2 py-1 text-sm rounded ${timeframe === tf ? "bg-white/8 text-white" : "text-gray-300 hover:bg-white/3"}`}>{tf}</button> */}
+              {/* ))} */}
             </div>
           </div>
           <div className="h-56">

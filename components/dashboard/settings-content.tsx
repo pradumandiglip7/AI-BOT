@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { motion, AnimatePresence } from "framer-motion";
 import {
   User,
@@ -96,7 +97,7 @@ export const SettingsContent: React.FC = () => {
               {activeSection === "notifications" && <NotificationsSection key="notifications" addToast={addToast} theme={theme} />}
               {activeSection === "trading" && <TradingSection key="trading" addToast={addToast} theme={theme} />}
               {activeSection === "api" && <ApiSection key="api" addToast={addToast} theme={theme} />}
-              {activeSection === "appearance" && <AppearanceSection key="appearance" addToast={addToast} theme={theme} setTheme={setTheme} />}
+              {/* {activeSection === "appearance" && <AppearanceSection key="appearance" addToast={addToast} theme={theme} setTheme={setTheme} />} */}
             </AnimatePresence>
           </div>
         </div>
@@ -128,7 +129,7 @@ export const SettingsContent: React.FC = () => {
   );
 };
 
-const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: string) => void; theme: string }) => {
+const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
   const [profile, setProfile] = useState({ name: "Alex Thompson", email: "alex@trading.com", phone: "+1 234-567-8900", timezone: "UTC-5" });
 
   const handleSave = () => {
@@ -215,7 +216,7 @@ const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: st
   );
 };
 
-const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: string) => void; theme: string }) => {
+const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
   const [password, setPassword] = useState({ current: "", new: "", confirm: "" });
   const [show2FA, setShow2FA] = useState(false);
   const [twoFA, setTwoFA] = useState(false);
@@ -329,7 +330,7 @@ const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: s
   );
 };
 
-const NotificationsSection = ({ addToast, theme }: { addToast: (msg: string, type?: string) => void; theme: string }) => {
+const NotificationsSection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
   const [prefs, setPrefs] = useState({
     emailAlerts: true,
     pushNotifications: true,
@@ -386,7 +387,7 @@ const NotificationsSection = ({ addToast, theme }: { addToast: (msg: string, typ
   );
 };
 
-const TradingSection = ({ addToast, theme }: { addToast: (msg: string, type?: string) => void; theme: string }) => {
+const TradingSection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
   const [settings, setSettings] = useState({
     orderType: "limit",
     riskLevel: "medium",
@@ -469,7 +470,7 @@ const TradingSection = ({ addToast, theme }: { addToast: (msg: string, type?: st
   );
 };
 
-const ApiSection = ({ addToast, theme }: { addToast: (msg: string, type?: string) => void; theme: string }) => {
+const ApiSection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
   const [keys, setKeys] = useState([
     { id: "key1", name: "Main API Key", key: "sk_live_abc...xyz", created: "2024-01-15", lastUsed: "2 hours ago" },
     { id: "key2", name: "Testing Key", key: "sk_test_123...456", created: "2024-02-20", lastUsed: "Never" },
@@ -538,7 +539,7 @@ const ApiSection = ({ addToast, theme }: { addToast: (msg: string, type?: string
   );
 };
 
-const AppearanceSection = ({ addToast, theme, setTheme }: { addToast: (msg: string, type?: string) => void; theme: string; setTheme: (t: string) => void }) => {
+const AppearanceSection = ({ addToast, theme, setTheme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string; setTheme: (t: string) => void }) => {
   const [settings, setSettings] = useState({
     theme: theme,
     chartColors: "default",

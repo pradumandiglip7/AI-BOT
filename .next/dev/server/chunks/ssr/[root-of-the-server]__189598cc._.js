@@ -1650,12 +1650,12 @@ const SettingsContent = ()=>{
                                     children: "Settings"
                                 }, void 0, false, {
                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 61,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 59,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1674,7 +1674,7 @@ const SettingsContent = ()=>{
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 83,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1682,25 +1682,25 @@ const SettingsContent = ()=>{
                                                 children: item.label
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 84,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, item.id, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 69,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0));
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 63,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1715,7 +1715,7 @@ const SettingsContent = ()=>{
                                         theme: theme
                                     }, "profile", false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 47
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     activeSection === "security" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SecuritySection, {
@@ -1723,7 +1723,7 @@ const SettingsContent = ()=>{
                                         theme: theme
                                     }, "security", false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 96,
                                         columnNumber: 48
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     activeSection === "notifications" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(NotificationsSection, {
@@ -1731,7 +1731,7 @@ const SettingsContent = ()=>{
                                         theme: theme
                                     }, "notifications", false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 97,
                                         columnNumber: 53
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     activeSection === "trading" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(TradingSection, {
@@ -1739,7 +1739,7 @@ const SettingsContent = ()=>{
                                         theme: theme
                                     }, "trading", false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 47
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     activeSection === "api" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(ApiSection, {
@@ -1747,38 +1747,29 @@ const SettingsContent = ()=>{
                                         theme: theme
                                     }, "api", false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 98,
-                                        columnNumber: 43
-                                    }, ("TURBOPACK compile-time value", void 0)),
-                                    activeSection === "appearance" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(AppearanceSection, {
-                                        addToast: addToast,
-                                        theme: theme,
-                                        setTheme: setTheme
-                                    }, "appearance", false, {
-                                        fileName: "[project]/components/dashboard/settings-content.tsx",
                                         lineNumber: 99,
-                                        columnNumber: 50
+                                        columnNumber: 43
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                            lineNumber: 92,
+                            lineNumber: 93,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 91,
+                        lineNumber: 92,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 56,
+                lineNumber: 57,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1802,32 +1793,32 @@ const SettingsContent = ()=>{
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 121,
+                                lineNumber: 122,
                                 columnNumber: 42
                             }, ("TURBOPACK compile-time value", void 0)),
                             toast.type === "error" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
                                 className: "w-5 h-5"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 122,
+                                lineNumber: 123,
                                 columnNumber: 40
                             }, ("TURBOPACK compile-time value", void 0)),
                             toast.message
                         ]
                     }, toast.id, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 108,
+                        lineNumber: 109,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 106,
+                lineNumber: 107,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 55,
+        lineNumber: 56,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -1863,7 +1854,7 @@ const ProfileSection = ({ addToast, theme })=>{
                         children: "Profile Settings"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 141,
+                        lineNumber: 142,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1871,13 +1862,13 @@ const ProfileSection = ({ addToast, theme })=>{
                         children: "Manage your account information"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 142,
+                        lineNumber: 143,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 140,
+                lineNumber: 141,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1891,7 +1882,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                 children: "Profile Picture"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 147,
+                                lineNumber: 148,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1902,7 +1893,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                         children: "AT"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 149,
+                                        lineNumber: 150,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1912,26 +1903,26 @@ const ProfileSection = ({ addToast, theme })=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 154,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " Upload Picture"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 153,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 148,
+                                lineNumber: 149,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 146,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1944,7 +1935,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                         children: "Full Name"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 161,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1957,13 +1948,13 @@ const ProfileSection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 162,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 159,
+                                lineNumber: 160,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1973,7 +1964,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                         children: "Email"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 170,
+                                        lineNumber: 171,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1986,13 +1977,13 @@ const ProfileSection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 172,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 169,
+                                lineNumber: 170,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2002,7 +1993,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                         children: "Phone"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 181,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2015,13 +2006,13 @@ const ProfileSection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 181,
+                                        lineNumber: 182,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 179,
+                                lineNumber: 180,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2031,7 +2022,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                         children: "Timezone"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 191,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2041,60 +2032,60 @@ const ProfileSection = ({ addToast, theme })=>{
                                                 children: "UTC-5 (EST)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 192,
+                                                lineNumber: 193,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 children: "UTC-6 (CST)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 193,
+                                                lineNumber: 194,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 children: "UTC-7 (MST)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 194,
+                                                lineNumber: 195,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 children: "UTC-8 (PST)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 196,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 children: "UTC+0 (GMT)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 197,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                 children: "UTC+1 (CET)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 197,
+                                                lineNumber: 198,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 192,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 189,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 158,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2106,7 +2097,7 @@ const ProfileSection = ({ addToast, theme })=>{
                                 children: "Save Changes"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 203,
+                                lineNumber: 204,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2114,25 +2105,25 @@ const ProfileSection = ({ addToast, theme })=>{
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 209,
+                                lineNumber: 210,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 202,
+                        lineNumber: 203,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 145,
+                lineNumber: 146,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 139,
+        lineNumber: 140,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2178,7 +2169,7 @@ const SecuritySection = ({ addToast, theme })=>{
                         children: "Security Settings"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 235,
+                        lineNumber: 236,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2186,13 +2177,13 @@ const SecuritySection = ({ addToast, theme })=>{
                         children: "Manage your account security"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 236,
+                        lineNumber: 237,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 234,
+                lineNumber: 235,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2203,7 +2194,7 @@ const SecuritySection = ({ addToast, theme })=>{
                         children: "Change Password"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 240,
+                        lineNumber: 241,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2216,7 +2207,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                         children: "Current Password"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 243,
+                                        lineNumber: 244,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2229,13 +2220,13 @@ const SecuritySection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 245,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 242,
+                                lineNumber: 243,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2245,7 +2236,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                         children: "New Password"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 253,
+                                        lineNumber: 254,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2258,13 +2249,13 @@ const SecuritySection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 254,
+                                        lineNumber: 255,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 252,
+                                lineNumber: 253,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2274,7 +2265,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                         children: "Confirm Password"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 263,
+                                        lineNumber: 264,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2287,13 +2278,13 @@ const SecuritySection = ({ addToast, theme })=>{
                                         className: `w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 264,
+                                        lineNumber: 265,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 262,
+                                lineNumber: 263,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2302,19 +2293,19 @@ const SecuritySection = ({ addToast, theme })=>{
                                 children: "Update Password"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 272,
+                                lineNumber: 273,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 241,
+                        lineNumber: 242,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 239,
+                lineNumber: 240,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2330,7 +2321,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                         children: "Two-Factor Authentication"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 284,
+                                        lineNumber: 285,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2338,13 +2329,13 @@ const SecuritySection = ({ addToast, theme })=>{
                                         children: "Add extra security to your account"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 285,
+                                        lineNumber: 286,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 283,
+                                lineNumber: 284,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2354,18 +2345,18 @@ const SecuritySection = ({ addToast, theme })=>{
                                     className: `absolute top-1 w-6 h-6 rounded-full bg-white transition ${twoFA ? "right-1" : "left-1"}`
                                 }, void 0, false, {
                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                    lineNumber: 291,
+                                    lineNumber: 292,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 287,
+                                lineNumber: 288,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 282,
+                        lineNumber: 283,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     twoFA && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2376,14 +2367,14 @@ const SecuritySection = ({ addToast, theme })=>{
                                 children: "Scan this QR code with your authenticator app:"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 297,
+                                lineNumber: 298,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `w-32 h-32 rounded-lg ${theme === "dark" ? "bg-white" : "bg-white"} mb-3`
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 298,
+                                lineNumber: 299,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2391,7 +2382,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                 children: "Or enter this code manually: JBSWY3DPEBLW64TMMQ"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 301,
+                                lineNumber: 302,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2399,19 +2390,19 @@ const SecuritySection = ({ addToast, theme })=>{
                                 children: "Verify & Enable"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 302,
+                                lineNumber: 303,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 296,
+                        lineNumber: 297,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 281,
+                lineNumber: 282,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2422,7 +2413,7 @@ const SecuritySection = ({ addToast, theme })=>{
                         children: "Active Sessions"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 310,
+                        lineNumber: 311,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2448,7 +2439,7 @@ const SecuritySection = ({ addToast, theme })=>{
                                                 children: session.device
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 318,
+                                                lineNumber: 319,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2460,13 +2451,13 @@ const SecuritySection = ({ addToast, theme })=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 319,
+                                                lineNumber: 320,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 317,
+                                        lineNumber: 318,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2476,37 +2467,37 @@ const SecuritySection = ({ addToast, theme })=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 322,
+                                                lineNumber: 323,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             " Sign Out"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 321,
+                                        lineNumber: 322,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, idx, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 316,
+                                lineNumber: 317,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 311,
+                        lineNumber: 312,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 309,
+                lineNumber: 310,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 233,
+        lineNumber: 234,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2543,7 +2534,7 @@ const NotificationsSection = ({ addToast, theme })=>{
                         children: "Notification Settings"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 348,
+                        lineNumber: 349,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2551,13 +2542,13 @@ const NotificationsSection = ({ addToast, theme })=>{
                         children: "Manage how you receive updates"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 349,
+                        lineNumber: 350,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 347,
+                lineNumber: 348,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2601,7 +2592,7 @@ const NotificationsSection = ({ addToast, theme })=>{
                                                 children: item.label
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 363,
+                                                lineNumber: 364,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2609,13 +2600,13 @@ const NotificationsSection = ({ addToast, theme })=>{
                                                 children: item.desc
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 364,
+                                                lineNumber: 365,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 362,
+                                        lineNumber: 363,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2628,23 +2619,23 @@ const NotificationsSection = ({ addToast, theme })=>{
                                             className: `absolute top-1 w-6 h-6 rounded-full bg-white transition ${prefs[item.key] ? "right-1" : "left-1"}`
                                         }, void 0, false, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 370,
+                                            lineNumber: 371,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 366,
+                                        lineNumber: 367,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, item.key, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 361,
+                                lineNumber: 362,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 353,
+                        lineNumber: 354,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2655,24 +2646,24 @@ const NotificationsSection = ({ addToast, theme })=>{
                             children: "Save Preferences"
                         }, void 0, false, {
                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                            lineNumber: 377,
+                            lineNumber: 378,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 376,
+                        lineNumber: 377,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 352,
+                lineNumber: 353,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 346,
+        lineNumber: 347,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2708,7 +2699,7 @@ const TradingSection = ({ addToast, theme })=>{
                         children: "Trading Settings"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 404,
+                        lineNumber: 405,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2716,13 +2707,13 @@ const TradingSection = ({ addToast, theme })=>{
                         children: "Configure your trading defaults"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 405,
+                        lineNumber: 406,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 403,
+                lineNumber: 404,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2738,7 +2729,7 @@ const TradingSection = ({ addToast, theme })=>{
                                         children: "Default Order Type"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 411,
+                                        lineNumber: 412,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2754,7 +2745,7 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "Market Order"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 417,
+                                                lineNumber: 418,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2762,7 +2753,7 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "Limit Order"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 418,
+                                                lineNumber: 419,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2770,19 +2761,19 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "Stop Order"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 419,
+                                                lineNumber: 420,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 412,
+                                        lineNumber: 413,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 410,
+                                lineNumber: 411,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2792,7 +2783,7 @@ const TradingSection = ({ addToast, theme })=>{
                                         children: "Risk Level"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 424,
+                                        lineNumber: 425,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2808,7 +2799,7 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "Low"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 430,
+                                                lineNumber: 431,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2816,7 +2807,7 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "Medium"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 431,
+                                                lineNumber: 432,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2824,19 +2815,19 @@ const TradingSection = ({ addToast, theme })=>{
                                                 children: "High"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 432,
+                                                lineNumber: 433,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 425,
+                                        lineNumber: 426,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 423,
+                                lineNumber: 424,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2846,7 +2837,7 @@ const TradingSection = ({ addToast, theme })=>{
                                         children: "Auto Stop-Loss (%)"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 437,
+                                        lineNumber: 438,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2860,13 +2851,13 @@ const TradingSection = ({ addToast, theme })=>{
                                         placeholder: "2"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 438,
+                                        lineNumber: 439,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 436,
+                                lineNumber: 437,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2876,7 +2867,7 @@ const TradingSection = ({ addToast, theme })=>{
                                         children: "Auto Take Profit (%)"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 448,
+                                        lineNumber: 449,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2890,19 +2881,19 @@ const TradingSection = ({ addToast, theme })=>{
                                         placeholder: "5"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 449,
+                                        lineNumber: 450,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 447,
+                                lineNumber: 448,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 409,
+                        lineNumber: 410,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2913,24 +2904,24 @@ const TradingSection = ({ addToast, theme })=>{
                             children: "Save Settings"
                         }, void 0, false, {
                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                            lineNumber: 460,
+                            lineNumber: 461,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 459,
+                        lineNumber: 460,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 408,
+                lineNumber: 409,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 402,
+        lineNumber: 403,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -2983,7 +2974,7 @@ const ApiSection = ({ addToast, theme })=>{
                                 children: "API Settings"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 491,
+                                lineNumber: 492,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2991,13 +2982,13 @@ const ApiSection = ({ addToast, theme })=>{
                                 children: "Manage your API keys"
                             }, void 0, false, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 492,
+                                lineNumber: 493,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 490,
+                        lineNumber: 491,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3006,13 +2997,13 @@ const ApiSection = ({ addToast, theme })=>{
                         children: "+ Generate Key"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 494,
+                        lineNumber: 495,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 489,
+                lineNumber: 490,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3032,7 +3023,7 @@ const ApiSection = ({ addToast, theme })=>{
                                                     children: k.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                    lineNumber: 508,
+                                                    lineNumber: 509,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3043,13 +3034,13 @@ const ApiSection = ({ addToast, theme })=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                    lineNumber: 509,
+                                                    lineNumber: 510,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 507,
+                                            lineNumber: 508,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3060,20 +3051,20 @@ const ApiSection = ({ addToast, theme })=>{
                                                     className: "w-4 h-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                    lineNumber: 515,
+                                                    lineNumber: 516,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 " Revoke"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 511,
+                                            lineNumber: 512,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                    lineNumber: 506,
+                                    lineNumber: 507,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3083,7 +3074,7 @@ const ApiSection = ({ addToast, theme })=>{
                                             children: k.key
                                         }, void 0, false, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 520,
+                                            lineNumber: 521,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3096,18 +3087,18 @@ const ApiSection = ({ addToast, theme })=>{
                                                 className: "w-4 h-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 528,
+                                                lineNumber: 529,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 521,
+                                            lineNumber: 522,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                    lineNumber: 519,
+                                    lineNumber: 520,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3118,29 +3109,29 @@ const ApiSection = ({ addToast, theme })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                                    lineNumber: 532,
+                                    lineNumber: 533,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, k.id, true, {
                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                            lineNumber: 505,
+                            lineNumber: 506,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)))
                 }, void 0, false, {
                     fileName: "[project]/components/dashboard/settings-content.tsx",
-                    lineNumber: 503,
+                    lineNumber: 504,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 502,
+                lineNumber: 503,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 488,
+        lineNumber: 489,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -3176,7 +3167,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                         children: "Appearance Settings"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 556,
+                        lineNumber: 557,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3184,13 +3175,13 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                         children: "Customize your interface"
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 557,
+                        lineNumber: 558,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 555,
+                lineNumber: 556,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3206,7 +3197,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                         children: "Theme"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 563,
+                                        lineNumber: 564,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3235,26 +3226,26 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                        lineNumber: 584,
+                                                        lineNumber: 585,
                                                         columnNumber: 21
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     t.label
                                                 ]
                                             }, t.id, true, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 571,
+                                                lineNumber: 572,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0));
                                         })
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 564,
+                                        lineNumber: 565,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 562,
+                                lineNumber: 563,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3264,7 +3255,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                         children: "Chart Color Scheme"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 593,
+                                        lineNumber: 594,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -3280,7 +3271,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                 children: "Default (Green/Red)"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 599,
+                                                lineNumber: 600,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3288,7 +3279,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                 children: "Blue Theme"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 600,
+                                                lineNumber: 601,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -3296,19 +3287,19 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                 children: "Purple Theme"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 601,
+                                                lineNumber: 602,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 594,
+                                        lineNumber: 595,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 592,
+                                lineNumber: 593,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3321,7 +3312,7 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                 children: "Compact Mode"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 607,
+                                                lineNumber: 608,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3329,13 +3320,13 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                                 children: "Reduce padding and spacing"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                                lineNumber: 608,
+                                                lineNumber: 609,
                                                 columnNumber: 15
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 606,
+                                        lineNumber: 607,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -3348,24 +3339,24 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                                             className: `absolute top-1 w-6 h-6 rounded-full bg-white transition ${settings.compactMode ? "right-1" : "left-1"}`
                                         }, void 0, false, {
                                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                                            lineNumber: 614,
+                                            lineNumber: 615,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                                        lineNumber: 610,
+                                        lineNumber: 611,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                                lineNumber: 605,
+                                lineNumber: 606,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 561,
+                        lineNumber: 562,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3376,24 +3367,24 @@ const AppearanceSection = ({ addToast, theme, setTheme })=>{
                             children: "Save Changes"
                         }, void 0, false, {
                             fileName: "[project]/components/dashboard/settings-content.tsx",
-                            lineNumber: 620,
+                            lineNumber: 621,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/components/dashboard/settings-content.tsx",
-                        lineNumber: 619,
+                        lineNumber: 620,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/dashboard/settings-content.tsx",
-                lineNumber: 560,
+                lineNumber: 561,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/components/dashboard/settings-content.tsx",
-        lineNumber: 554,
+        lineNumber: 555,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -6438,248 +6429,247 @@ const TradesTab = ()=>{
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                    children: paged.map((t)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].tbody, {
+                                    children: paged.map((t)=>/*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].createElement(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].Fragment, {
+                                            key: t.id
+                                        }, /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].tr, {
                                             initial: {
                                                 opacity: 0
                                             },
                                             animate: {
                                                 opacity: 1
                                             },
+                                            onClick: ()=>setExpanded(expanded === t.id ? null : t.id),
+                                            className: "border-b border-white/6 hover:bg-white/3 transition cursor-pointer",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                                    onClick: ()=>setExpanded(expanded === t.id ? null : t.id),
-                                                    className: "border-b border-white/6 hover:bg-white/3 transition cursor-pointer",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: t.date.toLocaleString()
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 874,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4 font-semibold",
-                                                            children: t.asset
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 875,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `px-2 py-1 rounded text-xs font-bold ${t.type === "BUY" ? "bg-emerald-200 text-emerald-800" : "bg-red-200 text-red-800"}`,
-                                                                children: t.type
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                lineNumber: 877,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 876,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: t.amount
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 879,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: [
-                                                                "$",
-                                                                t.price
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 880,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4 font-semibold",
-                                                            children: [
-                                                                "$",
-                                                                t.total.toFixed(2)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 881,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: [
-                                                                "$",
-                                                                t.fee
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 882,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `px-2 py-1 rounded text-xs font-bold ${t.status === "Completed" ? "bg-emerald-500/30 text-emerald-200" : t.status === "Pending" ? "bg-yellow-500/30 text-yellow-200" : "bg-red-500/30 text-red-200"}`,
-                                                                children: t.status
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                lineNumber: 884,
-                                                                columnNumber: 23
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 883,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "py-3 px-4 text-right",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "text-xs",
-                                                                children: expanded === t.id ? "▲" : "▼"
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                lineNumber: 886,
-                                                                columnNumber: 58
-                                                            }, ("TURBOPACK compile-time value", void 0))
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 886,
-                                                            columnNumber: 21
-                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                    ]
-                                                }, void 0, true, {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: t.date.toLocaleString()
+                                                }, void 0, false, {
                                                     fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                    lineNumber: 873,
-                                                    columnNumber: 19
+                                                    lineNumber: 874,
+                                                    columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0)),
-                                                expanded === t.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                                    className: "bg-white/3 border-b border-white/6",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                        colSpan: 9,
-                                                        className: "py-4 px-4",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "grid grid-cols-4 gap-6 text-sm",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-gray-400",
-                                                                            children: "Net P&L"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 892,
-                                                                            columnNumber: 32
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-lg font-bold text-emerald-300",
-                                                                            children: [
-                                                                                "$",
-                                                                                (t.total - t.fee).toFixed(2)
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 892,
-                                                                            columnNumber: 76
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                    lineNumber: 892,
-                                                                    columnNumber: 27
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-gray-400",
-                                                                            children: "Fee %"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 893,
-                                                                            columnNumber: 32
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-lg font-bold",
-                                                                            children: [
-                                                                                (t.fee / t.total * 100).toFixed(2),
-                                                                                "%"
-                                                                            ]
-                                                                        }, void 0, true, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 893,
-                                                                            columnNumber: 74
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                    lineNumber: 893,
-                                                                    columnNumber: 27
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-gray-400",
-                                                                            children: "Status Details"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 894,
-                                                                            columnNumber: 32
-                                                                        }, ("TURBOPACK compile-time value", void 0)),
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                            className: "text-sm",
-                                                                            children: t.status === "Completed" ? "Trade executed successfully" : t.status === "Pending" ? "Awaiting execution" : "Trade failed to execute"
-                                                                        }, void 0, false, {
-                                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                            lineNumber: 894,
-                                                                            columnNumber: 83
-                                                                        }, ("TURBOPACK compile-time value", void 0))
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                    lineNumber: 894,
-                                                                    columnNumber: 27
-                                                                }, ("TURBOPACK compile-time value", void 0)),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        className: "px-3 py-1 rounded bg-white/5 text-sm hover:bg-white/10",
-                                                                        children: "Details"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                        lineNumber: 895,
-                                                                        columnNumber: 32
-                                                                    }, ("TURBOPACK compile-time value", void 0))
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                                    lineNumber: 895,
-                                                                    columnNumber: 27
-                                                                }, ("TURBOPACK compile-time value", void 0))
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                            lineNumber: 891,
-                                                            columnNumber: 25
-                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4 font-semibold",
+                                                    children: t.asset
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 875,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: `px-2 py-1 rounded text-xs font-bold ${t.type === "BUY" ? "bg-emerald-200 text-emerald-800" : "bg-red-200 text-red-800"}`,
+                                                        children: t.type
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                        lineNumber: 890,
+                                                        lineNumber: 877,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                    lineNumber: 889,
+                                                    lineNumber: 876,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: t.amount
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 879,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: [
+                                                        "$",
+                                                        t.price
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 880,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4 font-semibold",
+                                                    children: [
+                                                        "$",
+                                                        t.total.toFixed(2)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 881,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: [
+                                                        "$",
+                                                        t.fee
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 882,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: `px-2 py-1 rounded text-xs font-bold ${t.status === "Completed" ? "bg-emerald-500/30 text-emerald-200" : t.status === "Pending" ? "bg-yellow-500/30 text-yellow-200" : "bg-red-500/30 text-red-200"}`,
+                                                        children: t.status
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                        lineNumber: 884,
+                                                        columnNumber: 23
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 883,
+                                                    columnNumber: 21
+                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                    className: "py-3 px-4 text-right",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-xs",
+                                                        children: expanded === t.id ? "▲" : "▼"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                        lineNumber: 886,
+                                                        columnNumber: 58
+                                                    }, ("TURBOPACK compile-time value", void 0))
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 886,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
-                                        }, t.id, true, {
+                                        }, void 0, true, {
                                             fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                            lineNumber: 872,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0)))
+                                            lineNumber: 873,
+                                            columnNumber: 19
+                                        }, ("TURBOPACK compile-time value", void 0)), expanded === t.id && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].tr, {
+                                            initial: {
+                                                opacity: 0
+                                            },
+                                            animate: {
+                                                opacity: 1
+                                            },
+                                            className: "bg-white/3 border-b border-white/6",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                colSpan: 9,
+                                                className: "py-4 px-4",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "grid grid-cols-4 gap-6 text-sm",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-gray-400",
+                                                                    children: "Net P&L"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 892,
+                                                                    columnNumber: 32
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-lg font-bold text-emerald-300",
+                                                                    children: [
+                                                                        "$",
+                                                                        (t.total - t.fee).toFixed(2)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 892,
+                                                                    columnNumber: 76
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                            lineNumber: 892,
+                                                            columnNumber: 27
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-gray-400",
+                                                                    children: "Fee %"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 893,
+                                                                    columnNumber: 32
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-lg font-bold",
+                                                                    children: [
+                                                                        (t.fee / t.total * 100).toFixed(2),
+                                                                        "%"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 893,
+                                                                    columnNumber: 74
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                            lineNumber: 893,
+                                                            columnNumber: 27
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-gray-400",
+                                                                    children: "Status Details"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 894,
+                                                                    columnNumber: 32
+                                                                }, ("TURBOPACK compile-time value", void 0)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-sm",
+                                                                    children: t.status === "Completed" ? "Trade executed successfully" : t.status === "Pending" ? "Awaiting execution" : "Trade failed to execute"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                    lineNumber: 894,
+                                                                    columnNumber: 83
+                                                                }, ("TURBOPACK compile-time value", void 0))
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                            lineNumber: 894,
+                                                            columnNumber: 27
+                                                        }, ("TURBOPACK compile-time value", void 0)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                className: "px-3 py-1 rounded bg-white/5 text-sm hover:bg-white/10",
+                                                                children: "Details"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                                lineNumber: 895,
+                                                                columnNumber: 32
+                                                            }, ("TURBOPACK compile-time value", void 0))
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                            lineNumber: 895,
+                                                            columnNumber: 27
+                                                        }, ("TURBOPACK compile-time value", void 0))
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                    lineNumber: 891,
+                                                    columnNumber: 25
+                                                }, ("TURBOPACK compile-time value", void 0))
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                                lineNumber: 890,
+                                                columnNumber: 23
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/dashboard/trader-dashboard.tsx",
+                                            lineNumber: 889,
+                                            columnNumber: 21
+                                        }, ("TURBOPACK compile-time value", void 0))))
                                 }, void 0, false, {
                                     fileName: "[project]/components/dashboard/trader-dashboard.tsx",
                                     lineNumber: 870,
@@ -6986,16 +6976,7 @@ const AnalyticsTab = ()=>{
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-2",
-                                        children: "1D 1W 1M 3M 1Y ALL".split(" ").map((tf)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                onClick: ()=>setTimeframe(tf),
-                                                className: `px-2 py-1 text-sm rounded ${timeframe === tf ? "bg-white/8 text-white" : "text-gray-300 hover:bg-white/3"}`,
-                                                children: tf
-                                            }, tf, false, {
-                                                fileName: "[project]/components/dashboard/trader-dashboard.tsx",
-                                                lineNumber: 991,
-                                                columnNumber: 17
-                                            }, ("TURBOPACK compile-time value", void 0)))
+                                        className: "flex items-center gap-2"
                                     }, void 0, false, {
                                         fileName: "[project]/components/dashboard/trader-dashboard.tsx",
                                         lineNumber: 989,

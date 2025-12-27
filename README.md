@@ -1,119 +1,155 @@
-# AI Market Prediction Bot Landing Page
+<div align="center">
 
-A premium, high-fidelity landing page for an AI Market Prediction Telegram Bot built with Next.js 15, React, TypeScript, Tailwind CSS, and Framer Motion.
+# AI Bot
 
-## ✨ Features
+_Next-Gen AI Market Prediction & Trading Dashboard_
 
-- **Animated Background**: Beautiful gradient animations that cover the entire scrollable page
-- **Smooth Hover Effects**: All interactive cards have smooth lift/scale effects using Framer Motion
-- **Fully Scrollable**: Fixed scrolling issues - page now scrolls properly through all sections
-- **Responsive Design**: Mobile-first approach with breakpoints for all screen sizes
-- **Modern UI/UX**: Dark mode Fintech/SaaS aesthetic with trustworthy design
-- **Framer Motion Animations**: Smooth entrance and hover animations throughout
+[![Next.js](https://img.shields.io/badge/Next.js-14%2B-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12.x-ED2590?logo=framer)](https://www.framer.com/motion/)
+[![Recharts](https://img.shields.io/badge/Recharts-3.x-FF6D00)](https://recharts.org/en-US/)
 
-## 🎨 Design System
+<br/>
 
-- **Primary Color**: `#2D68FF` (AI Blue)
-- **Secondary Color**: `#0D1117` (Deep Dark Background)
-- **Accent Color**: `#00D18F` (Success Green)
-- **Typography**: Inter font family for clean, modern look
+<!-- Placeholder for dashboard screenshot -->
+![Affynex Dashboard Placeholder](https://via.placeholder.com/1280x720?text=Affynex+Dashboard)
 
-## 📁 Project Structure
+</div>
 
-```
-├── app/
-│   ├── globals.css       # Global styles and Tailwind directives
-│   ├── layout.tsx        # Root layout with metadata
-│   └── page.tsx          # Main landing page
-├── components/
-│   └── ui/
-│       ├── background-gradient-animation.tsx  # Scrollable animated background
-│       └── button.tsx                         # Reusable button component
-├── lib/
-│   └── utils.ts          # Utility functions (cn helper)
-├── tailwind.config.ts    # Tailwind configuration with custom animations
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project dependencies
+## ✨ Overview
 
-```
+Affynex is a production-grade, high-fidelity AI trading platform built on Next.js App Router. It delivers a real-time, glassmorphic fintech experience that feels like Bloomberg meets Cyberpunk — fast, responsive, and premium.
+
+- Dark theme by default (`bg-background`, approx `#0B0E14`)
+- Accents: Cyan `#00D18F` and Electric Blue `#2D68FF`
+- Glassmorphism via `glass-card` utility, neon glows via `animate-pulse-glow`
+- Smooth transitions powered by Framer Motion
+
+---
+
+## ⚡ Key Features (Technical Breakdown)
+
+- Real-time Market Simulation
+  - Simulated streaming UI using timed updates and motion transitions
+  - Displayed in the Trader Dashboard overview with animated confidence bars
+- AI Confidence Engine
+  - Dynamic confidence meters and risk badges rendered in the dashboard
+  - Inline signals with animated progress indicators and target/stop overlays
+- Sentiment Analysis
+  - Bullish/Neutral/Bearish sentiment bars with animated width transitions
+  - Present in the overview panel with recent achievements and status icons
+- Live Ticker
+  - Infinite marquee-style ticker concept for crypto/forex prices
+  - Integrates well with Lucide icons and Tailwind utility classes
+- Glassmorphic UI
+  - `glass-card` utility for backdrop blur, borders, and rounded edges
+  - Neon glow utilities like `animate-pulse-glow` for premium highlights
+
+> Note: Some modules are implemented inline within the dashboard (e.g., signals and sentiment), while chart/ticker components can be extracted into dedicated files as needed.
+
+---
+
+## 🛠️ Tech Stack
+
+- Framework: Next.js 14+ (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS + CSS Variables (HSL-based theme)
+- Animation: Framer Motion (`AnimatePresence`, `whileHover`, transitions)
+- Icons: Lucide React
+- Charts: Recharts (responsive containerization)
+
+---
 
 ## 🚀 Getting Started
 
-### Installation
-
-Dependencies are already installed. If you need to reinstall:
-
 ```bash
+git clone [repo]
+cd affynex
 npm install
-```
-
-### Development
-
-Start the development server:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the page.
+Visit `http://localhost:3000` to view the app.
 
-### Build for Production
+### Production
 
 ```bash
 npm run build
 npm start
 ```
 
-## 🎯 Sections
+---
 
-1. **Hero Section**: Main headline with CTA buttons and live signal preview card
-2. **Key Features**: 3-column grid showcasing realtime AI signals, multi-asset coverage, and smart confidence engine
-3. **How It Works**: 4-step horizontal flow (Add Bot → Verify → Join Group → Receive Signals)
-4. **AI Technology**: Showcase of ML models (LSTM, LightGBM) and technical indicators (RSI, MACD, EMA, etc.)
-5. **Footer**: Legal links and contact information
+## 🎨 Theming & Customization
 
-## 🛠️ Technologies Used
+Theme variables are defined in `app/globals.css`. Key variables:
 
-- **Next.js 16** - React framework with App Router
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Tailwind CSS 3** - Utility-first CSS
-- **Framer Motion** - Animation library
-- **Lucide React** - Icon library
-- **Radix UI** - Headless UI components
-- **CVA** - Class variance authority for component variants
-
-## ⚡ Key Fixes Implemented
-
-1. ✅ Changed background from `h-screen overflow-hidden` to `min-h-screen` for proper scrolling
-2. ✅ Added `whileHover` effects to all interactive cards
-3. ✅ Configured custom Tailwind animations for background gradients
-4. ✅ Implemented proper TypeScript types throughout
-5. ✅ Fixed all configuration conflicts between Tailwind v3 and module types
-
-## 📝 Notes
-
-- The background gradient uses fixed positioning so it stays visible while scrolling
-- All animations are GPU-accelerated for smooth performance
-- Hover effects use Framer Motion's `whileHover` for optimal UX
-- Project uses ES modules (type: "module" in package.json)
-
-## 🎨 Customization
-
-To customize colors, edit the `tailwind.config.ts` file:
-
-```typescript
-colors: {
-  primary: "#2D68FF",    // Change primary color
-  secondary: "#0D1117",  // Change background color
-  accent: "#00D18F",     // Change accent color
+```css
+:root {
+  --background: 222 47% 6%;     /* Base background (dark) */
+  --primary: 187 92% 50%;       /* Electric Blue / Primary */
+  --accent: 160 84% 45%;        /* Cyan / Success / AI */
+  --border: 217 33% 17%;        /* Subtle border */
+  --ring: 187 92% 50%;          /* Focus ring color */
 }
 ```
 
-To adjust animations, modify the `keyframes` section in the same file.
+UI utilities:
+
+- `glass-card` → glassmorphism (blurred panels with soft borders)
+- `gradient-text` → cyan/blue gradient text
+- `animate-pulse-glow` → neon glow animation for accents
+
+Update these values to customize brand colors, glow intensity, and backgrounds.
 
 ---
 
-**Built with ❤️ for AI Market Trading**
-"# AI-BOT" 
-"# AI-BOT" 
+## 📂 Folder Structure Overview
+
+```
+├── app/
+│   ├── dashboard/            # Main Trader Interface
+│   ├── get-signals/          # Signal Receiver Onboarding Flow
+│   ├── provide-signals/      # Signal Provider Onboarding Flow
+│   ├── login/                # Auth Pages
+│   ├── signup/               # Auth Pages
+│   ├── globals.css           # Tailwind & CSS Variables (Theming)
+│   ├── layout.tsx            # Root Layout
+│   └── page.tsx              # Landing Page
+├── components/
+│   ├── dashboard/            # Sidebar, TopNavbar, Trader/Admin dashboards
+│   └── ui/                   # Button, BackgroundAnimations, Trial/Gradient buttons
+├── lib/
+│   └── utils.ts              # `cn` helper (clsx + tailwind-merge)
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+```
+
+- `app/` contains routes and top-level pages driven by the App Router.
+- `components/` contains reusable UI and dashboard modules.
+
+> If you plan to add static assets, create a `public/` directory and place images/fonts there for direct serving.
+
+---
+
+## 🧭 Pages & Flows
+
+- Landing (`app/page.tsx`) — hero CTA, feature grid, and technology overview
+- Dashboard (`app/dashboard/page.tsx`) — Trader/Admin role switcher, sidebar + top navbar, overview panels
+- Get Signals (`app/get-signals/page.tsx`) — 4-step onboarding (About → Choose Type → Connect → Subscribe)
+- Provide Signals (`app/provide-signals/page.tsx`) — 4-step provider onboarding (Platforms → Connect → Auto Replies → Dashboard)
+- Auth (`app/login`, `app/signup`) — authentication pages
+
+---
+
+## ✅ Production Notes
+
+- Fully typed with TypeScript and strict mode enabled
+- GPU-accelerated animations and blur effects for smooth UX
+- Uses App Router conventions for scalable routing and layouts
+
+---
+
+Built with pride for modern algorithmic trading teams 🧠📈

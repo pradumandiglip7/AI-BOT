@@ -4,6 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sidebar } from "./sidebar";
 import { TopNavbar } from "./top-navbar";
+import { SidebarProvider } from "./sidebar-context";
 import {
   LayoutDashboard,
   TrendingUp,
@@ -58,7 +59,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
   }, [initialActiveTab]);
 
   return (
-    <>
+    <SidebarProvider>
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -69,7 +70,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
       />
       <TopNavbar userName="Alex Thompson" notifications={5} />
 
-      <div className="ml-64 mt-20 p-6">
+      <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">
         <AnimatePresence mode="wait">
           {activeTab === "overview" && <OverviewTab key="overview" />}
           {activeTab === "signals" && <SignalsTab key="signals" />}
@@ -79,7 +80,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
           {activeTab === "settings" && <SettingsContent key="settings" />}
         </AnimatePresence>
       </div>
-    </>
+    </SidebarProvider>
   );
 };
 
@@ -156,10 +157,10 @@ const OverviewTab = () => {
     >
       {/* Welcome Header */}
       <div>
-        <h1 className="text-3xl font-bold text-white mb-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
           Welcome back, Alex 👋
         </h1>
-        <p className="text-gray-400">
+        <p className="text-sm sm:text-base text-gray-400">
           Here's what's happening with your portfolio today
         </p>
       </div>
@@ -212,16 +213,16 @@ const OverviewTab = () => {
             transition={{ delay: 0.2 }}
             className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-xl p-6"
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/20 border border-primary/50 flex items-center justify-center">
                   <Brain className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-bold text-white">
+                  <h2 className="text-lg sm:text-xl font-bold text-white">
                     AI Trading Signals
                   </h2>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-xs sm:text-sm text-gray-400">
                     Real-time AI predictions
                   </p>
                 </div>
@@ -229,7 +230,7 @@ const OverviewTab = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg text-sm font-semibold text-primary transition-all duration-300"
+                className="px-4 py-2 bg-primary/20 hover:bg-primary/30 border border-primary/50 rounded-lg text-sm font-semibold text-primary transition-all duration-300 whitespace-nowrap"
               >
                 View All
               </motion.button>
@@ -245,16 +246,16 @@ const OverviewTab = () => {
                   whileHover={{ x: 4 }}
                   className="bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 hover:border-primary/50 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 flex-1">
                       <div>
-                        <h3 className="text-lg font-bold text-white">
+                        <h3 className="text-base sm:text-lg font-bold text-white">
                           {signal.asset}
                         </h3>
-                        <p className="text-sm text-gray-400">{signal.price}</p>
+                        <p className="text-xs sm:text-sm text-gray-400">{signal.price}</p>
                       </div>
                       <span
-                        className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        className={`px-2 sm:px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
                           signal.action === "BUY"
                             ? "bg-accent/20 text-accent border border-accent/50"
                             : "bg-red-500/20 text-red-400 border border-red-500/50"
@@ -263,7 +264,7 @@ const OverviewTab = () => {
                         {signal.action}
                       </span>
                     </div>
-                    <div className="flex items-center gap-6">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-6 w-full sm:w-auto">
                       <div className="text-right">
                         <p className="text-xs text-gray-400">Confidence</p>
                         <div className="flex items-center gap-2">
@@ -460,31 +461,31 @@ function SignalsTab() {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-white">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
         <div>
-          <h2 className="text-2xl font-bold">AI Trading Signals</h2>
-          <p className="text-gray-400 text-sm">Real-time AI signals with confidence and risk metrics</p>
+          <h2 className="text-xl sm:text-2xl font-bold">AI Trading Signals</h2>
+          <p className="text-gray-400 text-xs sm:text-sm">Real-time AI signals with confidence and risk metrics</p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-2 bg-white/3 backdrop-blur rounded-full px-3 py-1 border border-white/6 text-sm text-gray-200">
-            <Clock className="w-4 h-4" />
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+          <div className="hidden sm:flex items-center gap-2 bg-white/3 backdrop-blur rounded-full px-3 py-1 border border-white/6 text-xs sm:text-sm text-gray-200">
+            <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
             Live
           </div>
-          <button onClick={generate} disabled={loading} className={`px-4 py-2 rounded-full font-semibold text-sm transition ${loading ? 'bg-amber-500 text-white' : 'bg-gradient-to-r from-emerald-400 to-emerald-300 text-black'}`}>
-            {loading ? <span className="flex items-center gap-2"><RefreshCw className="w-4 h-4 animate-spin" /> Generating...</span> : <span className="flex items-center gap-2"><Zap className="w-4 h-4" /> Generate New Signal</span>}
+          <button onClick={generate} disabled={loading} className={`px-3 sm:px-4 py-2 rounded-full font-semibold text-xs sm:text-sm transition whitespace-nowrap ${loading ? 'bg-amber-500 text-white' : 'bg-gradient-to-r from-emerald-400 to-emerald-300 text-black'}`}>
+            {loading ? <span className="flex items-center gap-2"><RefreshCw className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" /> <span className="hidden sm:inline">Generating...</span><span className="sm:hidden">...</span></span> : <span className="flex items-center gap-2"><Zap className="w-3 h-3 sm:w-4 sm:h-4" /> <span className="hidden sm:inline">Generate New Signal</span><span className="sm:hidden">New</span></span>}
           </button>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="flex items-center gap-3 mb-6 flex-wrap">
+      <div className="flex items-center gap-2 sm:gap-3 mb-6 flex-wrap">
         {(["All","Buy","Sell","Strong Buy","Strong Sell"] as const).map(tab => (
-          <button key={tab} onClick={() => setFilter(tab)} className={`px-3 py-1.5 rounded-full text-sm ${filter === tab ? 'bg-white/8 text-white border border-white/10' : 'text-gray-300 hover:bg-white/3'}`}>
+          <button key={tab} onClick={() => setFilter(tab)} className={`px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm whitespace-nowrap ${filter === tab ? 'bg-white/8 text-white border border-white/10' : 'text-gray-300 hover:bg-white/3'}`}>
             {tab}
           </button>
         ))}
-        <div className="ml-auto text-sm text-gray-400 hidden sm:block">Showing {filtered.length} signals</div>
+        <div className="ml-auto text-xs sm:text-sm text-gray-400 hidden sm:block">Showing {filtered.length} signals</div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -612,17 +613,17 @@ const PortfolioTab = () => {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-white space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold">Portfolio</h2>
-          <p className="text-gray-400 text-sm">Overview of your holdings and performance</p>
+          <h2 className="text-xl sm:text-2xl font-bold">Portfolio</h2>
+          <p className="text-gray-400 text-xs sm:text-sm">Overview of your holdings and performance</p>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="text-right">
-            <div className="text-3xl font-bold">${totalValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
-            <div className={`text-sm ${totalChange24 >= 0 ? 'text-emerald-300' : 'text-red-400'}`}>{totalChange24 >= 0 ? '+' : ''}{((totalChange24 / totalValue) * 100).toFixed(2)}% (24h)</div>
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="text-right flex-1 sm:flex-none">
+            <div className="text-2xl sm:text-3xl font-bold">${totalValue.toLocaleString(undefined, { maximumFractionDigits: 0 })}</div>
+            <div className={`text-xs sm:text-sm ${totalChange24 >= 0 ? 'text-emerald-300' : 'text-red-400'}`}>{totalChange24 >= 0 ? '+' : ''}{((totalChange24 / totalValue) * 100).toFixed(2)}% (24h)</div>
           </div>
-          <button onClick={() => setShowAdd(true)} className="px-4 py-2 rounded-full font-semibold bg-gradient-to-r from-emerald-400 to-cyan-400 text-black">Add Asset</button>
+          <button onClick={() => setShowAdd(true)} className="px-3 sm:px-4 py-2 rounded-full font-semibold text-xs sm:text-sm bg-gradient-to-r from-emerald-400 to-cyan-400 text-black whitespace-nowrap">Add Asset</button>
         </div>
       </div>
 
@@ -655,8 +656,9 @@ const PortfolioTab = () => {
             </ResponsiveContainer>
           </div>
 
-          <div className="mt-6 overflow-x-auto">
-            <table className="w-full text-sm table-fixed">
+          <div className="mt-6 overflow-x-auto -mx-4 sm:mx-0">
+            <div className="inline-block min-w-full align-middle">
+              <table className="min-w-full text-sm table-fixed">
               <thead>
                 <tr className="text-left text-gray-400">
                   <th className="pb-3">Asset</th>
@@ -695,6 +697,7 @@ const PortfolioTab = () => {
                 })}
               </tbody>
             </table>
+            </div>
           </div>
         </motion.div>
 
@@ -815,12 +818,12 @@ const TradesTab = () => {
 
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-white space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold">Trade History</h2>
-          <p className="text-gray-400 text-sm">View and manage all your trades</p>
+          <h2 className="text-xl sm:text-2xl font-bold">Trade History</h2>
+          <p className="text-gray-400 text-xs sm:text-sm">View and manage all your trades</p>
         </div>
-        <button onClick={exportCSV} className="px-4 py-2 rounded-full font-semibold bg-blue-500/80 text-white">Export CSV</button>
+        <button onClick={exportCSV} className="px-3 sm:px-4 py-2 rounded-full font-semibold text-xs sm:text-sm bg-blue-500/80 text-white whitespace-nowrap">Export CSV</button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -852,8 +855,9 @@ const TradesTab = () => {
           <div className="ml-auto text-sm text-gray-400">Showing {paged.length} of {filtered.length}</div>
         </div>
 
-        <div className="overflow-x-auto font-mono text-sm">
-          <table className="w-full">
+        <div className="overflow-x-auto -mx-4 sm:mx-0 font-mono text-xs sm:text-sm">
+          <div className="inline-block min-w-full align-middle">
+            <table className="min-w-full">
             <thead>
               <tr className="text-left text-gray-400 border-b border-white/6">
                 <th className="py-3 px-4">Date/Time</th>
@@ -901,6 +905,7 @@ const TradesTab = () => {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
 
         {maxPage > 1 && (
@@ -962,8 +967,8 @@ const AnalyticsTab = () => {
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="text-white space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold">Analytics</h2>
-          <p className="text-gray-400 text-sm">Comprehensive trading insights and performance metrics</p>
+          <h2 className="text-xl sm:text-2xl font-bold">Analytics</h2>
+          <p className="text-gray-400 text-xs sm:text-sm">Comprehensive trading insights and performance metrics</p>
         </div>
       </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sidebar } from "./sidebar";
 import { TopNavbar } from "./top-navbar";
+import { SidebarProvider } from "./sidebar-context";
 import {
   LayoutDashboard,
   Users,
@@ -21,6 +22,10 @@ import {
   AlertTriangle,
   Search,
 } from "lucide-react";
+import { AdminAnalytics } from "./AdminAnalytics";
+import { AdminRevenue } from "./AdminRevenue";
+import { AdminActivityLogs } from "./AdminActivityLogs";
+import { AdminSettings } from "./AdminSettings";
 
 const adminMenuItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -35,7 +40,7 @@ export const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
 
   return (
-    <>
+    <SidebarProvider>
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -46,16 +51,17 @@ export const AdminDashboard = () => {
       />
       <TopNavbar userName="Admin User" notifications={12} />
 
-      <div className="ml-64 mt-20 p-6">
+      <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">
         <AnimatePresence mode="wait">
           {activeTab === "dashboard" && <AdminDashboardTab key="dashboard" />}
           {activeTab === "users" && <UserManagementTab key="users" />}
           {activeTab === "analytics" && <AdminAnalyticsTab key="analytics" />}
           {activeTab === "revenue" && <RevenueTab key="revenue" />}
           {activeTab === "activity" && <ActivityLogsTab key="activity" />}
+          {activeTab === "settings" && <AdminSettingsTab key="settings" />}
         </AnimatePresence>
       </div>
-    </>
+    </SidebarProvider>
   );
 };
 
@@ -132,10 +138,10 @@ const AdminDashboardTab = () => {
     >
       {/* Welcome Header */}
       <div>
-        <h1 className="text-3xl font-bold text-white mb-2">
+        <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
           Admin Dashboard 🛡️
         </h1>
-        <p className="text-gray-400">
+        <p className="text-sm sm:text-base text-gray-400">
           System overview and user management
         </p>
       </div>
@@ -175,12 +181,12 @@ const AdminDashboardTab = () => {
         transition={{ delay: 0.2 }}
         className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-xl p-6"
       >
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-white">Recent Registrations</h2>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+          <h2 className="text-lg sm:text-xl font-bold text-white">Recent Registrations</h2>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-4 py-2 bg-accent/20 hover:bg-accent/30 border border-accent/50 rounded-lg text-sm font-semibold text-accent transition-all duration-300"
+            className="px-4 py-2 bg-accent/20 hover:bg-accent/30 border border-accent/50 rounded-lg text-sm font-semibold text-accent transition-all duration-300 whitespace-nowrap"
           >
             View All
           </motion.button>
@@ -194,26 +200,26 @@ const AdminDashboardTab = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 + idx * 0.1 }}
               whileHover={{ x: 4 }}
-              className="bg-gray-800/30 border border-gray-700/50 rounded-lg p-4 hover:border-accent/50 transition-all duration-300"
+              className="bg-gray-800/30 border border-gray-700/50 rounded-lg p-3 sm:p-4 hover:border-accent/50 transition-all duration-300"
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                   <img
                     src={user.avatar}
                     alt={user.name}
-                    className="w-12 h-12 rounded-full border-2 border-primary/50"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-primary/50 flex-shrink-0"
                   />
-                  <div>
-                    <h3 className="text-lg font-bold text-white">{user.name}</h3>
-                    <p className="text-sm text-gray-400">{user.email}</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base sm:text-lg font-bold text-white truncate">{user.name}</h3>
+                    <p className="text-xs sm:text-sm text-gray-400 truncate">{user.email}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-right">
-                    <p className="text-sm font-semibold text-white">{user.role}</p>
+                <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                  <div className="text-left sm:text-right">
+                    <p className="text-xs sm:text-sm font-semibold text-white">{user.role}</p>
                     <p className="text-xs text-gray-400">{user.joined}</p>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap ${
                     user.status === "active"
                       ? "bg-accent/20 text-accent border border-accent/50"
                       : "bg-yellow-500/20 text-yellow-400 border border-yellow-500/50"
@@ -303,22 +309,22 @@ const UserManagementTab = () => {
       transition={{ duration: 0.4 }}
       className="space-y-6"
     >
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             User Management
           </h1>
-          <p className="text-gray-400">
+          <p className="text-sm sm:text-base text-gray-400">
             Manage users, roles, and permissions
           </p>
         </div>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 px-6 py-3 bg-accent/20 hover:bg-accent/30 border border-accent/50 rounded-lg font-semibold text-accent transition-all duration-300"
+          className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-accent/20 hover:bg-accent/30 border border-accent/50 rounded-lg font-semibold text-accent transition-all duration-300 text-sm sm:text-base"
         >
-          <UserPlus className="w-5 h-5" />
-          Add New User
+          <UserPlus className="w-4 h-4 sm:w-5 sm:h-5" />
+          <span className="whitespace-nowrap">Add New User</span>
         </motion.button>
       </div>
 
@@ -338,26 +344,27 @@ const UserManagementTab = () => {
 
       {/* Users Table */}
       <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-xl overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
+        <div className="overflow-x-auto -mx-4 sm:mx-0">
+          <div className="inline-block min-w-full align-middle">
+            <table className="min-w-full divide-y divide-gray-700/50">
             <thead className="bg-gray-800/50 border-b border-gray-700/50">
               <tr>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
                   User
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider hidden sm:table-cell">
                   Subscription
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider hidden md:table-cell">
                   Trades
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider hidden md:table-cell">
                   Win Rate
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
                   Status
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-400 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -371,23 +378,32 @@ const UserManagementTab = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="hover:bg-gray-800/30 transition-colors duration-200"
                 >
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center gap-3">
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <img
                         src={user.avatar}
                         alt={user.name}
-                        className="w-10 h-10 rounded-full border-2 border-primary/50"
+                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-primary/50"
                       />
                       <div>
-                        <p className="text-sm font-semibold text-white">
+                        <p className="text-xs sm:text-sm font-semibold text-white">
                           {user.name}
                         </p>
-                        <p className="text-xs text-gray-400">{user.email}</p>
+                        <p className="text-xs text-gray-400 hidden sm:block">{user.email}</p>
+                        <div className="sm:hidden">
+                          <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                            user.subscription === "Premium"
+                              ? "bg-accent/20 text-accent border border-accent/50"
+                              : "bg-gray-700/50 text-gray-300 border border-gray-600/50"
+                          }`}>
+                            {user.subscription}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap hidden sm:table-cell">
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-bold ${
                       user.subscription === "Premium"
                         ? "bg-accent/20 text-accent border border-accent/50"
                         : "bg-gray-700/50 text-gray-300 border border-gray-600/50"
@@ -395,16 +411,16 @@ const UserManagementTab = () => {
                       {user.subscription}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-white">
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-xs sm:text-sm text-white hidden md:table-cell">
                     {user.trades}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="text-sm font-semibold text-accent">
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap hidden md:table-cell">
+                    <span className="text-xs sm:text-sm font-semibold text-accent">
                       {user.winRate}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-bold ${
                       user.status === "active"
                         ? "bg-accent/20 text-accent border border-accent/50"
                         : "bg-red-500/20 text-red-400 border border-red-500/50"
@@ -412,8 +428,8 @@ const UserManagementTab = () => {
                       {user.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center gap-2">
+                  <td className="px-4 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                    <div className="flex items-center gap-1 sm:gap-2">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -454,44 +470,17 @@ const UserManagementTab = () => {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </motion.div>
   );
 };
 
-const AdminAnalyticsTab = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="text-white"
-  >
-    <h2 className="text-2xl font-bold mb-4">Analytics</h2>
-    <p className="text-gray-400">System analytics and performance metrics...</p>
-  </motion.div>
-);
+const AdminAnalyticsTab = () => <AdminAnalytics />;
 
-const RevenueTab = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="text-white"
-  >
-    <h2 className="text-2xl font-bold mb-4">Revenue</h2>
-    <p className="text-gray-400">Revenue tracking and financial overview...</p>
-  </motion.div>
-);
+const RevenueTab = () => <AdminRevenue />;
 
-const ActivityLogsTab = () => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="text-white"
-  >
-    <h2 className="text-2xl font-bold mb-4">Activity Logs</h2>
-    <p className="text-gray-400">System activity and audit logs...</p>
-  </motion.div>
-);
+const ActivityLogsTab = () => <AdminActivityLogs />;
+
+const AdminSettingsTab = () => <AdminSettings />;

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bell, Search, Settings, LogOut } from "lucide-react";
+import { Bell, Search, Settings, LogOut, Menu } from "lucide-react";
 import { useState } from "react";
+import { useSidebarContext } from "./sidebar-context";
 
 interface TopNavbarProps {
   userName: string;
@@ -14,15 +15,24 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   notifications = 3,
 }) => {
   const [searchFocused, setSearchFocused] = useState(false);
+  const { toggleMobile } = useSidebarContext();
 
   return (
     <motion.div
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="fixed top-0 left-64 right-0 h-16 bg-gray-900/30 backdrop-blur-md border-b border-gray-800/50 z-30"
+      className="fixed top-0 left-0 lg:left-64 right-0 h-16 bg-gray-900/30 backdrop-blur-md border-b border-gray-800/50 z-30"
     >
-      <div className="h-full px-6 flex items-center justify-between">
+      <div className="h-full px-4 sm:px-6 flex items-center justify-between gap-4">
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMobile}
+          className="lg:hidden p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700/50 transition-all duration-300"
+        >
+          <Menu className="w-5 h-5 text-gray-400" />
+        </button>
+
         {/* Search Bar */}
         <div className="flex-1 max-w-xl">
           <motion.div
@@ -41,14 +51,14 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
             />
-            <kbd className="hidden sm:inline-flex items-center px-2 py-1 text-xs font-mono text-gray-400 bg-gray-800/50 rounded">
+            <kbd className="hidden md:inline-flex items-center px-2 py-1 text-xs font-mono text-gray-400 bg-gray-800/50 rounded">
               ⌘K
             </kbd>
           </motion.div>
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Notifications */}
           <motion.button
             className="relative p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700/50 transition-all duration-300"
@@ -67,18 +77,18 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             )}
           </motion.button>
 
-          {/* Settings */}
+          {/* Settings - Hidden on mobile */}
           <motion.button
-            className="p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700/50 transition-all duration-300"
+            className="hidden sm:block p-2 rounded-lg bg-gray-800/30 hover:bg-gray-800/50 border border-gray-700/50 transition-all duration-300"
             whileHover={{ scale: 1.05, rotate: 90 }}
             whileTap={{ scale: 0.95 }}
           >
             <Settings className="w-5 h-5 text-gray-400" />
           </motion.button>
 
-          {/* Logout */}
+          {/* Logout - Hidden on mobile */}
           <motion.button
-            className="p-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/50 transition-all duration-300"
+            className="hidden sm:block p-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/50 transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -52,23 +52,34 @@ export const SettingsContent: React.FC = () => {
     { id: "appearance", label: "Appearance", icon: Palette },
   ];
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className={`w-full transition-colors ${theme === "dark" ? "bg-gray-950 text-white" : "bg-white text-gray-950"}`}>
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Left menu inside settings */}
-        <div className={`w-64 border-r ${theme === "dark" ? "border-gray-800 bg-gray-900" : "border-gray-200 bg-gray-50"}`}>
-          <div className="p-6 border-b border-gray-800">
-            <h1 className="text-2xl font-bold">Settings</h1>
+        <div className={`w-full lg:w-64 border-b lg:border-b-0 lg:border-r ${theme === "dark" ? "border-gray-800 bg-gray-900" : "border-gray-200 bg-gray-50"} ${!mobileMenuOpen ? "hidden lg:block" : "block"}`}>
+          <div className="p-4 sm:p-6 border-b border-gray-800 flex items-center justify-between">
+            <h1 className="text-xl sm:text-2xl font-bold">Settings</h1>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-800"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           <nav className="p-4 space-y-2">
-            {menuItems.map((item) => {
+              {menuItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
               return (
                 <motion.button
                   key={item.id}
-                  onClick={() => setActiveSection(item.id)}
+                  onClick={() => {
+                    setActiveSection(item.id);
+                    setMobileMenuOpen(false);
+                  }}
                   whileHover={{ x: 4 }}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition ${
                     isActive
@@ -88,9 +99,20 @@ export const SettingsContent: React.FC = () => {
           </nav>
         </div>
 
+        {/* Mobile Menu Toggle */}
+        <div className="lg:hidden p-4 border-b border-gray-800">
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700"
+          >
+            <Settings className="w-5 h-5" />
+            <span>Settings Menu</span>
+          </button>
+        </div>
+
         {/* Main content area */}
         <div className="flex-1 overflow-auto">
-          <div className="max-w-3xl mx-auto p-8">
+          <div className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
             <AnimatePresence mode="wait">
               {activeSection === "profile" && <ProfileSection key="profile" addToast={addToast} theme={theme} />}
               {activeSection === "security" && <SecuritySection key="security" addToast={addToast} theme={theme} />}
@@ -139,14 +161,14 @@ const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "s
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Profile Settings</h2>
-        <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Manage your account information</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">Profile Settings</h2>
+        <p className={`text-sm sm:text-base ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Manage your account information</p>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
         <div className="mb-6">
           <label className="block text-sm font-semibold mb-3">Profile Picture</label>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className={`w-24 h-24 rounded-full ${theme === "dark" ? "bg-gradient-to-br from-blue-500 to-purple-500" : "bg-blue-200"} flex items-center justify-center text-4xl font-bold`}>
               AT
             </div>
@@ -233,12 +255,12 @@ const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: "
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Security Settings</h2>
-        <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Manage your account security</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">Security Settings</h2>
+        <p className={`text-sm sm:text-base ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Manage your account security</p>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
-        <h3 className="text-xl font-semibold mb-4">Change Password</h3>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+        <h3 className="text-lg sm:text-xl font-semibold mb-4">Change Password</h3>
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold mb-2">Current Password</label>
@@ -279,11 +301,11 @@ const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: "
         </div>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
-        <div className="flex items-center justify-between mb-4">
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
           <div>
-            <h3 className="text-xl font-semibold">Two-Factor Authentication</h3>
-            <p className={theme === "dark" ? "text-sm text-gray-400" : "text-sm text-gray-600"}>Add extra security to your account</p>
+            <h3 className="text-lg sm:text-xl font-semibold">Two-Factor Authentication</h3>
+            <p className={`text-xs sm:text-sm ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Add extra security to your account</p>
           </div>
           <button
             onClick={() => setTwoFA(!twoFA)}
@@ -307,8 +329,8 @@ const SecuritySection = ({ addToast, theme }: { addToast: (msg: string, type?: "
         )}
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
-        <h3 className="text-xl font-semibold mb-4">Active Sessions</h3>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+        <h3 className="text-lg sm:text-xl font-semibold mb-4">Active Sessions</h3>
         <div className="space-y-3">
           {[
             { device: "Chrome on Windows", location: "New York, USA", time: "Now" },
@@ -346,11 +368,11 @@ const NotificationsSection = ({ addToast, theme }: { addToast: (msg: string, typ
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Notification Settings</h2>
-        <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Manage how you receive updates</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">Notification Settings</h2>
+        <p className={`text-sm sm:text-base ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Manage how you receive updates</p>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
         <div className="space-y-4">
           {[
             { key: "emailAlerts", label: "Email Alerts", desc: "Receive email notifications for important events" },
@@ -359,10 +381,10 @@ const NotificationsSection = ({ addToast, theme }: { addToast: (msg: string, typ
             { key: "orderUpdates", label: "Order Updates", desc: "Get notified when your orders execute" },
             { key: "weeklyReport", label: "Weekly Report", desc: "Receive weekly trading summary" },
           ].map((item) => (
-            <div key={item.key} className="flex items-center justify-between p-4 rounded-lg hover:bg-white/3 transition">
-              <div>
-                <div className="font-semibold">{item.label}</div>
-                <div className="text-sm text-gray-400">{item.desc}</div>
+            <div key={item.key} className="flex items-center justify-between p-3 sm:p-4 rounded-lg hover:bg-white/3 transition">
+              <div className="flex-1 min-w-0 pr-4">
+                <div className="font-semibold text-sm sm:text-base">{item.label}</div>
+                <div className="text-xs sm:text-sm text-gray-400">{item.desc}</div>
               </div>
               <button
                 onClick={() => setPrefs((p) => ({ ...p, [item.key]: !p[item.key as keyof typeof p] }))}
@@ -402,11 +424,11 @@ const TradingSection = ({ addToast, theme }: { addToast: (msg: string, type?: "s
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold mb-2">Trading Settings</h2>
-        <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Configure your trading defaults</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-2">Trading Settings</h2>
+        <p className={`text-sm sm:text-base ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Configure your trading defaults</p>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-semibold mb-2">Default Order Type</label>
@@ -487,20 +509,20 @@ const ApiSection = ({ addToast, theme }: { addToast: (msg: string, type?: "succe
 
   return (
     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-bold mb-2">API Settings</h2>
-          <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>Manage your API keys</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">API Settings</h2>
+          <p className={`text-sm sm:text-base ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>Manage your API keys</p>
         </div>
         <button
           onClick={handleGenerate}
-          className={`px-6 py-2 rounded-lg font-semibold ${theme === "dark" ? "bg-emerald-500 hover:bg-emerald-600" : "bg-emerald-600 hover:bg-emerald-700"} text-white`}
+          className={`px-4 sm:px-6 py-2 rounded-lg font-semibold text-sm sm:text-base whitespace-nowrap ${theme === "dark" ? "bg-emerald-500 hover:bg-emerald-600" : "bg-emerald-600 hover:bg-emerald-700"} text-white`}
         >
           + Generate Key
         </button>
       </div>
 
-      <div className={`p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
+      <div className={`p-4 sm:p-6 rounded-xl border ${theme === "dark" ? "border-gray-800 bg-white/5 backdrop-blur" : "border-gray-200 bg-gray-50"}`}>
         <div className="space-y-4">
           {keys.map((k) => (
             <div key={k.id} className={`p-4 rounded-lg ${theme === "dark" ? "bg-white/3 border border-white/6" : "bg-white border border-gray-200"}`}>

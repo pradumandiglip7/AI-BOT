@@ -1,6 +1,8 @@
 "use client";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { BrokerSelector } from "@/components/brokers/BrokerSelector";
+import { mockBrokers } from "@/lib/brokers";
 import { motion } from "framer-motion";
 import { 
   TrendingUp, 
@@ -21,15 +23,24 @@ import { useState } from "react";
 export default function GetSignalsPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedBrokers, setSelectedBrokers] = useState<string[]>([]);
   const [selectedTelegram, setSelectedTelegram] = useState("");
 
-  const totalSteps = 4;
+  const totalSteps = 5; // Updated from 4 to 5
 
   const toggleSignalType = (type: string) => {
     setSelectedTypes(prev => 
       prev.includes(type) 
         ? prev.filter(t => t !== type)
         : [...prev, type]
+    );
+  };
+
+  const toggleBroker = (brokerId: string) => {
+    setSelectedBrokers(prev => 
+      prev.includes(brokerId) 
+        ? prev.filter(id => id !== brokerId)
+        : [...prev, brokerId]
     );
   };
 
@@ -63,7 +74,7 @@ export default function GetSignalsPage() {
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex items-center justify-between mb-2">
-              {[1, 2, 3, 4].map((step) => (
+              {[1, 2, 3, 4, 5].map((step) => (
                 <div key={step} className="flex items-center flex-1">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
                     step <= currentStep 
@@ -72,7 +83,7 @@ export default function GetSignalsPage() {
                   }`}>
                     {step}
                   </div>
-                  {step < 4 && (
+                  {step < 5 && (
                     <div className={`flex-1 h-1 mx-2 ${
                       step < currentStep ? 'bg-accent' : 'bg-gray-700'
                     }`} />
@@ -82,7 +93,8 @@ export default function GetSignalsPage() {
             </div>
             <div className="flex justify-between text-sm text-gray-400 mt-2">
               <span>About</span>
-              <span>Choose Type</span>
+              <span>Type</span>
+              <span>Broker</span>
               <span>Connect</span>
               <span>Subscribe</span>
             </div>
@@ -187,14 +199,42 @@ export default function GetSignalsPage() {
                     onClick={() => setCurrentStep(3)}
                     disabled={selectedTypes.length === 0}
                   >
+                    Next: Select Broker
+                  </GradientButton>
+                </div>
+              </div>
+            )}
+
+            {/* Step 3: Select Broker */}
+            {currentStep === 3 && (
+              <div className="space-y-6">
+                <BrokerSelector
+                  brokers={mockBrokers}
+                  selectedBrokers={selectedBrokers}
+                  onToggleBroker={toggleBroker}
+                  title="Select Your Broker"
+                  description="Please register with at least one supported broker to receive signals"
+                  multiSelect={true}
+                />
+                <div className="flex justify-center gap-4 mt-8">
+                  <button
+                    onClick={() => setCurrentStep(2)}
+                    className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
+                  >
+                    Back
+                  </button>
+                  <GradientButton 
+                    onClick={() => setCurrentStep(4)}
+                    disabled={selectedBrokers.length === 0}
+                  >
                     Continue
                   </GradientButton>
                 </div>
               </div>
             )}
 
-            {/* Step 3: Connect Telegram */}
-            {currentStep === 3 && (
+            {/* Step 4: Connect Telegram */}
+            {currentStep === 4 && (
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-white mb-6">Connect to Telegram</h2>
                 <p className="text-gray-400 mb-6">Choose how you want to receive signals</p>
@@ -230,13 +270,13 @@ export default function GetSignalsPage() {
                 </div>
                 <div className="flex justify-center gap-4 mt-8">
                   <button
-                    onClick={() => setCurrentStep(2)}
+                    onClick={() => setCurrentStep(3)}
                     className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
                   >
                     Back
                   </button>
                   <GradientButton 
-                    onClick={() => setCurrentStep(4)}
+                    onClick={() => setCurrentStep(5)}
                     disabled={!selectedTelegram}
                   >
                     Continue
@@ -245,8 +285,8 @@ export default function GetSignalsPage() {
               </div>
             )}
 
-            {/* Step 4: Subscription */}
-            {currentStep === 4 && (
+            {/* Step 5: Subscription */}
+            {currentStep === 5 && (
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-white mb-6 text-center">Choose Your Plan</h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -289,7 +329,7 @@ export default function GetSignalsPage() {
                 </div>
                 <div className="flex justify-center gap-4 mt-8">
                   <button
-                    onClick={() => setCurrentStep(3)}
+                    onClick={() => setCurrentStep(4)}
                     className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
                   >
                     Back

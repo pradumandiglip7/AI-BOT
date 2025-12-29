@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "AI Market Prediction Bot | Telegram Trading Signals",
   description: "Realtime trading signals powered by AI — crypto, forex, stocks & more. Get probability-based entries with confidence scores.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

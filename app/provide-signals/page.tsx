@@ -1,6 +1,8 @@
 "use client";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { BrokerSelector } from "@/components/brokers/BrokerSelector";
+import { mockBrokers } from "@/lib/brokers";
 import { motion } from "framer-motion";
 import { 
   DollarSign,
@@ -20,6 +22,7 @@ import { useState } from "react";
 export default function ProvideSignalsPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
+  const [selectedBrokers, setSelectedBrokers] = useState<string[]>([]);
   const [telegramLink, setTelegramLink] = useState("");
   const [formData, setFormData] = useState({
     welcomeMsg: "Welcome to our signals channel! 🚀",
@@ -28,13 +31,21 @@ export default function ProvideSignalsPage() {
     closeTemplate: "Signal closed for {pair} at {price}"
   });
 
-  const totalSteps = 4;
+  const totalSteps = 5; // Updated from 4 to 5
 
   const togglePlatform = (platform: string) => {
     setSelectedPlatforms(prev => 
       prev.includes(platform) 
         ? prev.filter(p => p !== platform)
         : [...prev, platform]
+    );
+  };
+
+  const toggleBroker = (brokerId: string) => {
+    setSelectedBrokers(prev => 
+      prev.includes(brokerId) 
+        ? prev.filter(id => id !== brokerId)
+        : [...prev, brokerId]
     );
   };
 
@@ -68,7 +79,7 @@ export default function ProvideSignalsPage() {
           {/* Progress Bar */}
           <div className="mb-12">
             <div className="flex items-center justify-between mb-2">
-              {[1, 2, 3, 4].map((step) => (
+              {[1, 2, 3, 4, 5].map((step) => (
                 <div key={step} className="flex items-center flex-1">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
                     step <= currentStep 
@@ -77,7 +88,7 @@ export default function ProvideSignalsPage() {
                   }`}>
                     {step}
                   </div>
-                  {step < 4 && (
+                  {step < 5 && (
                     <div className={`flex-1 h-1 mx-2 ${
                       step < currentStep ? 'bg-accent' : 'bg-gray-700'
                     }`} />
@@ -87,9 +98,10 @@ export default function ProvideSignalsPage() {
             </div>
             <div className="flex justify-between text-sm text-gray-400 mt-2">
               <span>Platforms</span>
+              <span>Brokers</span>
               <span>Connect</span>
-              <span>Auto Replies</span>
-              <span>Dashboard</span>
+              <span>Replies</span>
+              <span>Done</span>
             </div>
           </div>
 
@@ -143,14 +155,42 @@ export default function ProvideSignalsPage() {
                     onClick={() => setCurrentStep(2)}
                     disabled={selectedPlatforms.length === 0}
                   >
+                    Next: Select Brokers
+                  </GradientButton>
+                </div>
+              </div>
+            )}
+
+            {/* Step 2: Select Brokers */}
+            {currentStep === 2 && (
+              <div className="space-y-6">
+                <BrokerSelector
+                  brokers={mockBrokers}
+                  selectedBrokers={selectedBrokers}
+                  onToggleBroker={toggleBroker}
+                  title="Select the Brokers You Provide Signals For"
+                  description="Choose the brokers where you actively provide trading signals"
+                  multiSelect={true}
+                />
+                <div className="flex justify-center gap-4 mt-8">
+                  <button
+                    onClick={() => setCurrentStep(1)}
+                    className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
+                  >
+                    Back
+                  </button>
+                  <GradientButton 
+                    onClick={() => setCurrentStep(3)}
+                    disabled={selectedBrokers.length === 0}
+                  >
                     Continue
                   </GradientButton>
                 </div>
               </div>
             )}
 
-            {/* Step 2: Connect Telegram */}
-            {currentStep === 2 && (
+            {/* Step 3: Connect Telegram */}
+            {currentStep === 3 && (
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-white mb-6">Connect Your Telegram</h2>
                 <p className="text-gray-400 mb-6">Enter your Telegram Channel or Group link</p>
@@ -182,13 +222,13 @@ export default function ProvideSignalsPage() {
                 </div>
                 <div className="flex justify-center gap-4 mt-8">
                   <button
-                    onClick={() => setCurrentStep(1)}
+                    onClick={() => setCurrentStep(2)}
                     className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
                   >
                     Back
                   </button>
                   <GradientButton 
-                    onClick={() => setCurrentStep(3)}
+                    onClick={() => setCurrentStep(4)}
                     disabled={!telegramLink}
                   >
                     Continue
@@ -197,8 +237,8 @@ export default function ProvideSignalsPage() {
               </div>
             )}
 
-            {/* Step 3: Auto Replies */}
-            {currentStep === 3 && (
+            {/* Step 4: Auto Replies */}
+            {currentStep === 4 && (
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-white mb-6">Configure Auto Replies</h2>
                 <p className="text-gray-400 mb-6">Customize automated messages for your signals</p>
@@ -266,20 +306,20 @@ export default function ProvideSignalsPage() {
                 </div>
                 <div className="flex justify-center gap-4 mt-8">
                   <button
-                    onClick={() => setCurrentStep(2)}
+                    onClick={() => setCurrentStep(3)}
                     className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-full transition-colors"
                   >
                     Back
                   </button>
-                  <GradientButton onClick={() => setCurrentStep(4)}>
+                  <GradientButton onClick={() => setCurrentStep(5)}>
                     Continue
                   </GradientButton>
                 </div>
               </div>
             )}
 
-            {/* Step 4: Dashboard/Success */}
-            {currentStep === 4 && (
+            {/* Step 5: Dashboard/Success */}
+            {currentStep === 5 && (
               <div className="space-y-6">
                 <div className="text-center mb-12">
                   <div className="w-24 h-24 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">

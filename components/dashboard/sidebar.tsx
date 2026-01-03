@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Activity, LogOut, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useSidebarContext } from "./sidebar-context";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 interface MenuItem {
   id: string;
@@ -26,6 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   userRole,
   userAvatar,
 }) => {
+  const {logout} = useAuth()
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const { isMobileOpen, setIsMobileOpen } = useSidebarContext();
@@ -90,7 +92,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <h1 className="text-xl font-bold gradient-text">Trador</h1>
+                <h1 className="text-xl font-bold gradient-text">AI Market Bot</h1>
                 <p className="text-xs text-muted-foreground">Pro Dashboard</p>
               </motion.div>
             )}
@@ -183,6 +185,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full mt-2 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+              onClick={logout}
             >
               <LogOut className="w-4 h-4" />
               <span>Sign Out</span>

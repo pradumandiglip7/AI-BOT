@@ -50,8 +50,10 @@ const menuItems = [
 ];
 
 import SettingsContent from "./settings-content";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initialActiveTab }) => {
+  const {user}= useAuth()
   const [activeTab, setActiveTab] = useState(initialActiveTab ?? "overview");
 
   useEffect(() => {
@@ -64,12 +66,11 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         menuItems={menuItems}
-        userName="Alex Thompson"
+        userName={user ? user?.fullName : ""}
         userRole="Premium Trader"
         userAvatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"
       />
-      <TopNavbar userName="Alex Thompson" notifications={5} />
-
+      <TopNavbar userName={user ? user?.fullName : "Alex Thompson"} notifications={5} />
       <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">
         <AnimatePresence mode="wait">
           {activeTab === "overview" && <OverviewTab key="overview" />}

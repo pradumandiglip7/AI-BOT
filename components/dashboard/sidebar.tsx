@@ -188,7 +188,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               onClick={logout}
             >
               <LogOut className="w-4 h-4" />
-              <span>Sign Out</span>
+              <span>Log Out</span>
             </motion.button>
           )}
         </div>

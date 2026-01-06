@@ -9,6 +9,8 @@ node_modules
 # Build output
 dist
 build
+tsconfig.tsbuildinfo
+*.tsbuildinfo
 
 # Logs
 logs

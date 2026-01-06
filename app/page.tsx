@@ -1,10 +1,11 @@
 "use client";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { GradientBackground } from "@/components/ui/gradient-background";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/ui/header";
 import { ElectroBorder } from "@/components/ui/electro-border";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { TrustedTradersCarousel } from "@/components/ui/trusted-traders-carousel";
+import { LiveSignalModal } from "@/components/LiveSignalModal";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -22,15 +23,20 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const customGradients = [
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+    "linear-gradient(135deg, #000814 0%, #1e3a8a 50%, #00d18f 100%)",
+    "linear-gradient(135deg, #1a2332 0%, #2d68ff 50%, #06b6d4 100%)",
+    "linear-gradient(135deg, #0f172a 0%, #00d18f 50%, #2d68ff 100%)",
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+  ];
+
   return (
-    <BackgroundGradientAnimation
-      gradientBackgroundStart="rgb(13, 17, 23)"
-      gradientBackgroundEnd="rgb(0, 8, 20)"
-      firstColor="45, 104, 255"
-      secondColor="0, 209, 143"
-      thirdColor="100, 149, 237"
-      fourthColor="30, 64, 175"
-      fifthColor="6, 182, 212"
+    <GradientBackground
+      gradients={customGradients}
+      animationDuration={12}
+      overlay={true}
+      overlayOpacity={0.4}
     >
       <Header />
       <div className="w-full pt-16 md:pt-20">
@@ -87,7 +93,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Right Content - Signal Preview Card */}
+              {/* Right Content - Live Signal Modal */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -95,62 +101,7 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="relative"
               >
-                <div className="bg-gradient-to-br from-gray-900/80 via-gray-800/50 to-gray-900/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 shadow-2xl">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <Signal className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-bold text-lg">Live Signal</h3>
-                        <p className="text-gray-400 text-sm">Just now</p>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1 bg-accent/20 border border-accent/30 rounded-full">
-                      <span className="text-accent font-bold text-sm">ACTIVE</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Symbol</span>
-                      <span className="text-white font-bold text-xl">BTC/USD</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Action</span>
-                      <span className="px-4 py-2 bg-accent/20 border border-accent rounded-lg text-accent font-bold">
-                        BUY
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Entry Price</span>
-                      <span className="text-white font-bold">$42,350</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Target</span>
-                      <span className="text-white font-bold">$43,800</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-400">Stop Loss</span>
-                      <span className="text-red-400 font-bold">$41,900</span>
-                    </div>
-
-                    <div className="pt-4 border-t border-gray-700">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-400">Confidence Score</span>
-                        <span className="text-accent font-bold text-2xl">98%</span>
-                      </div>
-                      <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: "98%" }}
-                          transition={{ duration: 1.5, delay: 0.5 }}
-                          className="h-full bg-gradient-to-r from-accent to-primary rounded-full"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <LiveSignalModal />
               </motion.div>
             </div>
           </div>
@@ -605,7 +556,7 @@ export default function Home() {
           </div>
         </footer>
       </div>
-    </BackgroundGradientAnimation>
+    </GradientBackground>
   );
 }
 

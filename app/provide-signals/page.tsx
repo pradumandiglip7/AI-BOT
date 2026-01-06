@@ -1,5 +1,5 @@
 "use client";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { GradientBackground } from "@/components/ui/gradient-background";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { BrokerSelector } from "@/components/brokers/BrokerSelector";
 import { mockBrokers } from "@/lib/brokers";
@@ -49,15 +49,20 @@ export default function ProvideSignalsPage() {
     );
   };
 
+  const customGradients = [
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+    "linear-gradient(135deg, #000814 0%, #1e3a8a 50%, #00d18f 100%)",
+    "linear-gradient(135deg, #1a2332 0%, #2d68ff 50%, #06b6d4 100%)",
+    "linear-gradient(135deg, #0f172a 0%, #00d18f 50%, #2d68ff 100%)",
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+  ];
+
   return (
-    <BackgroundGradientAnimation
-      gradientBackgroundStart="rgb(13, 17, 23)"
-      gradientBackgroundEnd="rgb(0, 8, 20)"
-      firstColor="45, 104, 255"
-      secondColor="0, 209, 143"
-      thirdColor="100, 149, 237"
-      fourthColor="30, 64, 175"
-      fifthColor="6, 182, 212"
+    <GradientBackground
+      gradients={customGradients}
+      animationDuration={12}
+      overlay={true}
+      overlayOpacity={0.4}
     >
       <div className="min-h-screen py-12 px-4">
         <div className="max-w-5xl mx-auto">
@@ -365,6 +370,6 @@ export default function ProvideSignalsPage() {
           </motion.div>
         </div>
       </div>
-    </BackgroundGradientAnimation>
+    </GradientBackground>
   );
 }

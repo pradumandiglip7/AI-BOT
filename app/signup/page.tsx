@@ -1,5 +1,5 @@
 "use client";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { GradientBackground } from "@/components/ui/gradient-background";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Mail, Lock, User, Zap, AlertCircle, CheckCircle2 } from "lucide-react";
@@ -72,15 +72,20 @@ export default function SignupPage() {
     }
   };
 
+  const customGradients = [
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+    "linear-gradient(135deg, #000814 0%, #1e3a8a 50%, #00d18f 100%)",
+    "linear-gradient(135deg, #1a2332 0%, #2d68ff 50%, #06b6d4 100%)",
+    "linear-gradient(135deg, #0f172a 0%, #00d18f 50%, #2d68ff 100%)",
+    "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",
+  ];
+
   return (
-    <BackgroundGradientAnimation
-      gradientBackgroundStart="rgb(13, 17, 23)"
-      gradientBackgroundEnd="rgb(0, 8, 20)"
-      firstColor="45, 104, 255"
-      secondColor="0, 209, 143"
-      thirdColor="100, 149, 237"
-      fourthColor="30, 64, 175"
-      fifthColor="6, 182, 212"
+    <GradientBackground
+      gradients={customGradients}
+      animationDuration={12}
+      overlay={true}
+      overlayOpacity={0.4}
     >
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <motion.div
@@ -256,7 +261,15 @@ export default function SignupPage() {
 
             {/* Social Signup */}
             <div className="grid grid-cols-2 gap-4">
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white hover:bg-gray-800/50 transition-all">
+              <button
+                type="button"
+                onClick={() => {
+                  // handleGoogleSignUp will be implemented separately
+                  console.log("Google signup clicked");
+                }}
+                aria-label="Sign up with Google"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white hover:bg-gray-800/50 active:bg-gray-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500"
+              >
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -265,11 +278,19 @@ export default function SignupPage() {
                 </svg>
                 <span className="text-sm">Google</span>
               </button>
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white hover:bg-gray-800/50 transition-all">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              <button
+                type="button"
+                onClick={() => {
+                  // handleAppleSignUp - to be implemented separately
+                  console.log("Apple signup clicked");
+                }}
+                aria-label="Continue with Apple"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-black border border-gray-700 rounded-lg text-white hover:bg-gray-900 active:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-500"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z" />
                 </svg>
-                <span className="text-sm">GitHub</span>
+                <span className="text-sm">Apple</span>
               </button>
             </div>
 
@@ -290,6 +311,6 @@ export default function SignupPage() {
           </div>
         </motion.div>
       </div>
-    </BackgroundGradientAnimation>
+    </GradientBackground>
   );
 }

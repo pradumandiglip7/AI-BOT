@@ -6,6 +6,7 @@ import { ElectroBorder } from "@/components/ui/electro-border";
 import { GradientButton } from "@/components/ui/gradient-button";
 import { TrustedTradersCarousel } from "@/components/ui/trusted-traders-carousel";
 import { LiveSignalModal } from "@/components/LiveSignalModal";
+import PricingSection from "@/components/ui/pricing";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -21,6 +22,7 @@ import {
   Signal,
   Mail,
 } from "lucide-react";
+
 
 export default function Home() {
   const customGradients = [
@@ -427,71 +429,8 @@ export default function Home() {
         <TrustedTradersCarousel />
 
         {/* Pricing Section */}
-        <section id="pricing" className="relative py-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Simple, Transparent Pricing
-              </h2>
-              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Choose the plan that fits your trading needs
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* Free Plan */}
-              <PricingCard
-                title="Free"
-                price="$0"
-                period="forever"
-                features={[
-                  "5 signals per day",
-                  "Basic indicators",
-                  "Email support",
-                  "Community access",
-                ]}
-                borderColor="#6B7280"
-              />
-
-              {/* Premium Plan */}
-              <PricingCard
-                title="Premium"
-                price="$49"
-                period="per month"
-                features={[
-                  "Unlimited signals",
-                  "Advanced AI analysis",
-                  "Priority support",
-                  "Exclusive channel access",
-                  "Custom alerts",
-                  "Risk management tools",
-                ]}
-                borderColor="#00D18F"
-                recommended
-              />
-
-              {/* Pro Plan */}
-              <PricingCard
-                title="Pro"
-                price="$99"
-                period="per month"
-                features={[
-                  "Everything in Premium",
-                  "1-on-1 strategy calls",
-                  "Portfolio management",
-                  "API access",
-                  "White-label options",
-                ]}
-                borderColor="#2D68FF"
-              />
-            </div>
-          </div>
+        <section id="pricing" className="relative py-0 px-0">
+          <PricingSection />
         </section>
 
         {/* Footer */}

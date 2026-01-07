@@ -281,16 +281,16 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={() => {
-                  // handleAppleSignUp - to be implemented separately
-                  console.log("Apple signup clicked");
+                  // handleTelegramSignUp - to be implemented separately
+                  console.log("Telegram signup clicked");
                 }}
-                aria-label="Continue with Apple"
-                className="flex items-center justify-center gap-2 px-4 py-3 bg-black border border-gray-700 rounded-lg text-white hover:bg-gray-900 active:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-gray-500"
+                aria-label="Sign up with Telegram"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-[#229ED9] border border-gray-700 rounded-lg text-white hover:bg-[#1b8bb8] active:bg-[#187ca1] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-[#229ED9]"
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z" />
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm4.93 7.36l-1.43 6.77c-.11.49-.4.61-.81.38l-2.25-1.66-1.09 1.05c-.12.12-.23.23-.47.23l.17-2.39 4.36-3.94c.19-.17-.04-.27-.29-.1l-5.39 3.39-2.32-.73c-.5-.16-.51-.5.1-.73l9.06-3.5c.42-.16.79.1.66.72z"/>
                 </svg>
-                <span className="text-sm">Apple</span>
+                <span className="text-sm">Telegram</span>
               </button>
             </div>
 

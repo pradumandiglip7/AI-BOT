@@ -34,7 +34,7 @@ export function TimelineContent({
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, []); 
 
   return (
     <Component

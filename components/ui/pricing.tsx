@@ -215,13 +215,18 @@ export default function PricingSection() {
             animationNum={2 + index}
             customVariants={revealVariants}
           >
-            <Card
-              className={`relative border border-gray-700 ${
-                plan.popular
-                  ? "ring-2 ring-primary bg-gradient-to-br from-gray-900/90 via-gray-800/60 to-gray-900/90"
-                  : "bg-gradient-to-br from-gray-900/90 via-gray-800/60 to-gray-900/90"
-              }`}
+            <motion.div
+              whileHover={{ y: -8, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="rounded-3xl"
             >
+              <Card
+                className={`relative border border-gray-700 ${
+                  plan.popular
+                    ? "ring-2 ring-primary bg-gradient-to-br from-gray-900/90 via-gray-800/60 to-gray-900/90"
+                    : "bg-gradient-to-br from-gray-900/90 via-gray-800/60 to-gray-900/90"
+                }`}
+              >
               <CardHeader className="text-left ">
                 <div className="flex justify-between">
                   <h3 className="xl:text-3xl md:text-2xl text-3xl font-semibold text-white mb-2">
@@ -285,7 +290,8 @@ export default function PricingSection() {
                   </ul>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
+            </motion.div>
           </TimelineContent>
         ))}
       </div>

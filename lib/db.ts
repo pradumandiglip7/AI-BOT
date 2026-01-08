@@ -46,6 +46,10 @@ async function dbConnect() {
   try {
     cached.conn = await cached.promise;
     if (process.env.NODE_ENV !== 'production') console.debug('Using cached database connection.');
+  } catch (e) {
+    console.error('MongoDB connection error:', e);
+    // Reset promise so next attempt can retry connecting
+    cached.promise = null;
     throw e;
   }
 

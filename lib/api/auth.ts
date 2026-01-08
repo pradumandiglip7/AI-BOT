@@ -7,6 +7,7 @@ export interface User {
   fullName: string;
   email: string;
   role: 'trader' | 'admin';
+  avatar?: string;
   createdAt: string;
 }
 
@@ -112,9 +113,9 @@ export const authAPI = {
 
       const result: AuthResponse = await response.json();
 
-      // Save token and user data if successful
+      // Server sets HttpOnly cookie; only save user data client-side
       if (result.success && result.data) {
-        authUtils.saveToken(result.data.token);
+        authUtils.removeToken();
         authUtils.saveUser(result.data.user);
       }
 
@@ -141,9 +142,9 @@ export const authAPI = {
 
       const result: AuthResponse = await response.json();
 
-      // Save token and user data if successful
+      // Server sets HttpOnly cookie; only save user data client-side
       if (result.success && result.data) {
-        authUtils.saveToken(result.data.token);
+        authUtils.removeToken();
         authUtils.saveUser(result.data.user);
       }
 
@@ -166,6 +167,7 @@ export const authAPI = {
           'Content-Type': 'application/json',
           ...authUtils.getAuthHeader(),
         },
+        credentials: 'include', // ensure cookies are sent
       });
 
       const result: VerifyResponse = await response.json();
@@ -190,7 +192,18 @@ export const authAPI = {
   },
 
   // Logout
-  logout(): void {
-    authUtils.clearAuth();
+  async logout(): Promise<void> {
+    try {
+      await fetch(`${API_BASE_URL}/api/auth/logout`, { method: 'POST', credentials: 'include' });
+    } catch (err) {
+      console.error('Logout error:', err);
+    } finally {
+      authUtils.clearAuth();
+    }
+  },
+
+  // Google OAuth redirect
+  redirectToGoogleOAuth(): void {
+    window.location.href = '/api/auth/callback/google';
   },
 };

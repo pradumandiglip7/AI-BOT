@@ -33,6 +33,7 @@ export async function GET(request: NextRequest) {
       fullName: user.fullName,
       email: user.email,
       role: user.role,
+      avatar: user.avatar,
       createdAt: user.createdAt,
     };
 

@@ -70,7 +70,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
         userRole="Premium Trader"
         userAvatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"
       />
-      <TopNavbar userName={user ? user?.fullName : "Alex Thompson"} notifications={5} />
+      <TopNavbar userName={user?.fullName || "Trader"} notifications={5} />
       <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">
         <AnimatePresence mode="wait">
           {activeTab === "overview" && <OverviewTab key="overview" />}
@@ -86,6 +86,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
 };
 
 const OverviewTab = () => {
+  const { user } = useAuth();
   const stats = [
     {
       label: "Total Balance",
@@ -159,7 +160,7 @@ const OverviewTab = () => {
       {/* Welcome Header */}
       <div>
         <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-          Welcome back, Alex 👋
+          Welcome back, {user?.fullName?.split(' ')[0] || 'Trader'} 👋
         </h1>
         <p className="text-sm sm:text-base text-gray-400">
           Here's what's happening with your portfolio today

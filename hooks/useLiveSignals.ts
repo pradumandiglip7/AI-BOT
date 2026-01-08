@@ -84,7 +84,7 @@ export const useLiveSignals = () => {
   // Fetch live signal from API
   const fetchSignal = async (index: number) => {
     try {
-      console.log(`🔄 Fetching signal at index ${index}`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`🔄 Fetching signal at index ${index}`);
       
       const response = await fetch(`/api/live-signal?index=${index}`, {
         cache: 'no-store'
@@ -95,7 +95,7 @@ export const useLiveSignals = () => {
       }
 
       const data: Signal = await response.json();
-      console.log(`✅ Got signal: ${data.symbol} | Price: $${data.price}`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`✅ Got signal: ${data.symbol} | Price: $${data.price}`);
       
       setCurrentSignal(data);
       setIsConnected(true);
@@ -103,7 +103,7 @@ export const useLiveSignals = () => {
       console.error(`❌ Error fetching signal:`, error);
       // Fallback to mock on error
       const fallbackSignal = MOCK_SIGNALS[index % MOCK_SIGNALS.length];
-      console.log(`⚠️  Using fallback: ${fallbackSignal.symbol}`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`⚠️  Using fallback: ${fallbackSignal.symbol}`);
       setCurrentSignal(fallbackSignal);
       setIsConnected(false);
     }
@@ -111,7 +111,7 @@ export const useLiveSignals = () => {
 
   // Initial mount - avoid hydration mismatch
   useEffect(() => {
-    console.log('🚀 useLiveSignals hook mounted');
+    if (process.env.NODE_ENV !== 'production') console.debug('🚀 useLiveSignals hook mounted');
     setIsMounted(true);
     
     // Fetch immediately after mount
@@ -119,7 +119,7 @@ export const useLiveSignals = () => {
     currentIndexRef.current = 0;
 
     return () => {
-      console.log('🛑 useLiveSignals hook unmounted');
+      if (process.env.NODE_ENV !== 'production') console.debug('🛑 useLiveSignals hook unmounted');
       if (rotationInterval.current) clearInterval(rotationInterval.current);
       if (fetchInterval.current) clearInterval(fetchInterval.current);
     };
@@ -131,7 +131,7 @@ export const useLiveSignals = () => {
 
     rotationInterval.current = setInterval(() => {
       currentIndexRef.current = (currentIndexRef.current + 1) % MOCK_SIGNALS.length;
-      console.log(`⏱️  Rotating to index ${currentIndexRef.current}`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`⏱️  Rotating to index ${currentIndexRef.current}`);
       fetchSignal(currentIndexRef.current);
     }, 15000);
 
@@ -145,7 +145,7 @@ export const useLiveSignals = () => {
     if (!isMounted) return;
 
     fetchInterval.current = setInterval(() => {
-      console.log(`🔄 Refreshing price...`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`🔄 Refreshing price...`);
       fetchSignal(currentIndexRef.current);
     }, 5000);
 

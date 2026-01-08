@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Mail, Lock, Zap, AlertCircle, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { authAPI } from "@/lib/api/auth";
 
@@ -18,6 +18,52 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+
+  // utils/googleOAuth.ts
+const handleGoogleLogin = () => {
+  const state = generateRandomState();
+
+  // Persist state in a short-lived cookie (10 minutes) for CSRF protection
+  // Use SameSite=None & Secure in production so the cookie is sent on the OAuth redirect back from Google
+  const sameSite = process.env.NODE_ENV === 'production' ? 'SameSite=None' : 'SameSite=Lax';
+  const cookieParts = [`oauth_state=${encodeURIComponent(state)}`, `path=/`, `max-age=${10 * 60}`, sameSite];
+  if (process.env.NODE_ENV === 'production') cookieParts.push('Secure');
+  document.cookie = cookieParts.join('; ');
+
+  const params = new URLSearchParams({
+    client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
+    redirect_uri: `${window.location.origin}/api/auth/callback/google`,
+    response_type: 'code',
+    scope: 'openid email profile',
+    access_type: 'offline',
+    prompt: 'consent',
+    state,
+  });
+
+  const url = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+  window.location.href = url;
+
+};
+
+const generateRandomState = () => {
+  return Math.random().toString(36).substring(2, 15) + 
+         Math.random().toString(36).substring(2, 15);
+};
+
+
+
+  // Handle OAuth error from URL params on component mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const oauthError = urlParams.get("oauth_error");
+    
+    if (oauthError) {
+      setError(decodeURIComponent(oauthError));
+      // Remove the error param from URL to prevent showing on refresh
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []); // Only run once on mount
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -203,10 +249,7 @@ export default function LoginPage() {
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
-                onClick={() => {
-                  // handleGoogleSignIn will be implemented separately
-                  console.log("Google signin clicked");
-                }}
+                onClick={handleGoogleLogin}
                 aria-label="Sign in with Google"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white hover:bg-gray-800/50 active:bg-gray-700/50 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500"
               >
@@ -222,7 +265,7 @@ export default function LoginPage() {
                 type="button"
                 onClick={() => {
                   // handleTelegramSignIn - to be implemented separately
-                  console.log("Telegram signin clicked");
+                  if (process.env.NODE_ENV !== 'production') console.debug("Telegram signin clicked");
                 }}
                 aria-label="Sign in with Telegram"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-[#229ED9] border border-gray-700 rounded-lg text-white hover:bg-[#1b8bb8] active:bg-[#187ca1] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-[#229ED9]"

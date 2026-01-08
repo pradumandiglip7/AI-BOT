@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AdminDashboard } from "@/components/dashboard/admin-dashboard";
 import { TraderDashboard } from "@/components/dashboard/trader-dashboard";
 import { GradientBackground } from "@/components/ui/gradient-background";
+import { authAPI } from "@/lib/api/auth";
 
 export default function DashboardPage() {
   const [userRole, setUserRole] = useState<"admin" | "trader">("trader");
+
+  // Verify session with server on mount (cookie-based auth)
+  useEffect(() => {
+    authAPI.verifyToken().catch(() => {
+      // verifyToken handles clearing stale auth data if needed
+    });
+  }, []); // Only run once on mount
 
   const customGradients = [
     "linear-gradient(135deg, #0d1117 0%, #000814 50%, #1a2332 100%)",

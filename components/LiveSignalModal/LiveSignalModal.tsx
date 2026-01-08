@@ -8,14 +8,16 @@ export const LiveSignalModal: React.FC = () => {
   const { currentSignal, isConnected } = useLiveSignals();
 
   React.useEffect(() => {
-    console.log('🖼️  LiveSignalModal rendered with:', {
-      symbol: currentSignal.symbol,
-      price: currentSignal.price,
-      action: currentSignal.action,
-      connected: isConnected,
-    });
-    console.log('💰 CURRENT PRICE DISPLAYED ON PAGE:', currentSignal.price);
-    console.log('📊 This price is now visible in the UI!');
+    if (process.env.NODE_ENV !== 'production') {
+      console.debug('🖼️  LiveSignalModal rendered with:', {
+        symbol: currentSignal.symbol,
+        price: currentSignal.price,
+        action: currentSignal.action,
+        connected: isConnected,
+      });
+      console.debug('💰 CURRENT PRICE DISPLAYED ON PAGE:', currentSignal.price);
+      console.debug('📊 This price is now visible in the UI!');
+    }
   }, [currentSignal]);
 
   const actionColor = SignalData.getActionColor(currentSignal.action);

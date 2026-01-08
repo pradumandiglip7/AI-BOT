@@ -574,3 +574,7 @@ function PricingCard({ title, price, period, features, borderColor, recommended 
     </motion.div>
   );
 }
+
+
+
+

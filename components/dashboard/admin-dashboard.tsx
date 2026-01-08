@@ -26,6 +26,7 @@ import { AdminAnalytics } from "./AdminAnalytics";
 import { AdminRevenue } from "./AdminRevenue";
 import { AdminActivityLogs } from "./AdminActivityLogs";
 import { AdminSettings } from "./AdminSettings";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 const adminMenuItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -38,6 +39,7 @@ const adminMenuItems = [
 
 export const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const { user } = useAuth();
 
   return (
     <SidebarProvider>
@@ -45,11 +47,11 @@ export const AdminDashboard = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         menuItems={adminMenuItems}
-        userName="Admin User"
-        userRole="System Administrator"
-        userAvatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+        userName={user?.fullName || "Admin User"}
+        userRole={user?.role || "System Administrator"}
+        userAvatar={user?.avatar || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"}
       />
-      <TopNavbar userName="Admin User" notifications={12} />
+      <TopNavbar userName={user?.fullName || "Admin User"} notifications={12} />
 
       <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">
         <AnimatePresence mode="wait">

@@ -31,20 +31,6 @@ export function useAuth(): UseAuthReturn {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Initialize auth state from localStorage
-  useEffect(() => {
-    const storedUser = authUtils.getUser();
-    const token = authUtils.getToken();
-
-    if (storedUser && token) {
-      setUser(storedUser);
-      // Optionally verify token on mount
-      verifyToken();
-    } else {
-      setIsLoading(false);
-    }
-  }, []);
-
   // Verify token
   const verifyToken = useCallback(async (): Promise<boolean> => {
     setIsLoading(true);
@@ -65,6 +51,18 @@ export function useAuth(): UseAuthReturn {
       return false;
     }
   }, []);
+
+  // Initialize auth state from localStorage
+  useEffect(() => {
+    const storedUser = authUtils.getUser();
+    if (storedUser) {
+      setUser(storedUser);
+    }
+
+    // Always verify token on mount (supports cookie-based auth like Google OAuth)
+    // `verifyToken` will update `user` and `isLoading` appropriately
+    verifyToken();
+  }, [verifyToken]);
 
   // Login
   const login = useCallback(async (

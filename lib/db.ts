@@ -45,9 +45,7 @@ async function dbConnect() {
 
   try {
     cached.conn = await cached.promise;
-    console.log('Using cached database connection.                                                                                                                                       ');
-  } catch (e) {
-    cached.promise = null;
+    if (process.env.NODE_ENV !== 'production') console.debug('Using cached database connection.');
     throw e;
   }
 

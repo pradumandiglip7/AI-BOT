@@ -51,10 +51,14 @@ export async function POST(request: NextRequest) {
       fullName: user.fullName,
       email: user.email,
       role: user.role,
+      avatar: user.avatar,
       createdAt: user.createdAt,
     };
 
-    return NextResponse.json(
+    // Set HttpOnly cookie and return response
+    const cookieValue = `authToken=${token}; HttpOnly; Path=/; Max-Age=${7 * 24 * 60 * 60}; ${process.env.NODE_ENV === 'production' ? 'Secure;' : ''} SameSite=Strict`;
+
+    const response = NextResponse.json(
       {
         success: true,
         message: 'Login successful',
@@ -65,6 +69,9 @@ export async function POST(request: NextRequest) {
       },
       { status: 200 }
     );
+
+    response.headers.set('Set-Cookie', cookieValue);
+    return response;
   } catch (error: any) {
     console.error('Login error:', error);
 

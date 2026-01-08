@@ -70,7 +70,7 @@ async function fetchLivePrice(symbol: string): Promise<number> {
   try {
     // Crypto and Forex are not supported by Finnhub free tier
     if (symbol === 'BTC/USD' || symbol === 'ETH/USD' || symbol === 'EUR/USD') {
-      console.log(`${symbol} uses fallback price: ${FALLBACK_PRICES[symbol]}`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`${symbol} uses fallback price: ${FALLBACK_PRICES[symbol]}`);
       return FALLBACK_PRICES[symbol];
     }
 
@@ -82,17 +82,17 @@ async function fetchLivePrice(symbol: string): Promise<number> {
       return FALLBACK_PRICES[symbol] || 0;
     }
 
-    console.log(`📡 Fetching live price for ${symbol} from Finnhub...`);
+    if (process.env.NODE_ENV !== 'production') console.debug(`📡 Fetching live price for ${symbol} from Finnhub...`);
     
     // For stocks (NVDA, AAPL) - fetch from Finnhub
     const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
-    console.log(`   URL: ${url.slice(0, 50)}...`);
+    if (process.env.NODE_ENV !== 'production') console.debug(`   URL: ${url.slice(0, 50)}...`);
     
     const response = await fetch(url, { 
       cache: 'no-store'
     });
 
-    console.log(`   Status: ${response.status}`);
+    if (process.env.NODE_ENV !== 'production') console.debug(`   Status: ${response.status}`);
 
     if (!response.ok) {
       console.error(`❌ Finnhub API error for ${symbol}: ${response.status}`);
@@ -100,7 +100,7 @@ async function fetchLivePrice(symbol: string): Promise<number> {
     }
 
     const data = await response.json();
-    console.log(`   Data received:`, JSON.stringify(data).slice(0, 100));
+    if (process.env.NODE_ENV !== 'production') console.debug(`   Data received:`, JSON.stringify(data).slice(0, 100));
     
     // Finnhub returns current price in 'c' field (current price)
     // Other fields: d (change), dp (percent change), h (high), l (low), o (open), pc (previous close)
@@ -111,7 +111,7 @@ async function fetchLivePrice(symbol: string): Promise<number> {
       return FALLBACK_PRICES[symbol] || 0;
     }
 
-    console.log(`✅ Got live price for ${symbol}: $${price}`);
+    if (process.env.NODE_ENV !== 'production') console.debug(`✅ Got live price for ${symbol}: $${price}`);
     return price;
   } catch (error) {
     console.error(`❌ Error fetching price for ${symbol}:`, error);
@@ -142,7 +142,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const index = parseInt(searchParams.get('index') || '0');
 
-    console.log(`\n🔄 GET /api/live-signal - Index: ${index}`);
+    if (process.env.NODE_ENV !== 'production') console.debug(`\n🔄 GET /api/live-signal - Index: ${index}`);
     
     // Check if API key is configured
     const apiKey = process.env.FINNHUB_API_KEY;
@@ -150,12 +150,12 @@ export async function GET(request: Request) {
       console.warn(`⚠️  FINNHUB_API_KEY not set in environment!`);
       console.warn(`   Please add to .env.local: FINNHUB_API_KEY=your_key_here`);
     } else {
-      console.log(`✅ API Key configured: ${apiKey.slice(0, 10)}...`);
+      if (process.env.NODE_ENV !== 'production') console.debug(`✅ API Key configured: ${apiKey.slice(0, 10)}...`);
     }
 
     const signal = await getCurrentSignal(index);
     
-    console.log(`✅ Signal retrieved:`, {
+    if (process.env.NODE_ENV !== 'production') console.debug(`✅ Signal retrieved:`, {
       symbol: signal.symbol,
       price: signal.price,
       action: signal.action,

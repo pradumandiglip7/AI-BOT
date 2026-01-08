@@ -5,8 +5,12 @@ export interface IUser extends Document {
   _id: mongoose.Types.ObjectId;
   fullName: string;
   email: string;
-  password: string;
+  password?: string;
   role: 'trader' | 'admin';
+  googleId?: string;
+  googleRefreshToken?: string;
+  avatar?: string;
+  isVerified?: boolean;
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -33,7 +37,7 @@ const UserSchema = new Schema<IUser>(
     },
     password: {
       type: String,
-      required: [true, 'Please provide a password'],
+      required: false, // Optional for OAuth users
       minlength: [6, 'Password must be at least 6 characters'],
       select: false, // Don't return password by default
     },
@@ -41,6 +45,22 @@ const UserSchema = new Schema<IUser>(
       type: String,
       enum: ['trader', 'admin'],
       default: 'trader',
+    },
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true, // Allows null values but ensures uniqueness for non-null values
+    },
+    googleRefreshToken: {
+      type: String,
+      select: false,
+    },
+    avatar: {
+      type: String,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   {
@@ -50,7 +70,7 @@ const UserSchema = new Schema<IUser>(
 
 // Hash password before saving
 UserSchema.pre('save', async function () {
-  if (!this.isModified('password')) {
+  if (!this.isModified('password') || !this.password) {
     return;
   }
 

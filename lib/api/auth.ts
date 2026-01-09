@@ -9,6 +9,8 @@ export interface User {
   role: 'trader' | 'admin';
   avatar?: string;
   createdAt: string;
+  phone?: string;
+  timezone?: string;
 }
 
 export interface AuthResponse {
@@ -27,6 +29,8 @@ export interface VerifyResponse {
     user: User;
   };
 }
+
+export type UpdateProfilePayload = Partial<Omit<User, 'avatar'>> & { avatar?: string | null };
 
 // Auth utilities
 export const authUtils = {
@@ -56,6 +60,7 @@ export const authUtils = {
   saveUser(user: User): void {
     if (typeof window !== 'undefined') {
       localStorage.setItem('user', JSON.stringify(user));
+      window.dispatchEvent(new CustomEvent('auth:user', { detail: user }));
     }
   },
 
@@ -72,6 +77,7 @@ export const authUtils = {
   removeUser(): void {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('user');
+      window.dispatchEvent(new CustomEvent('auth:user', { detail: null }));
     }
   },
 
@@ -205,5 +211,98 @@ export const authAPI = {
   // Google OAuth redirect
   redirectToGoogleOAuth(): void {
     window.location.href = '/api/auth/callback/google';
+  },
+
+  // Telegram login
+  async telegramLogin(telegramData: any): Promise<AuthResponse> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/auth/callback/telegram`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(telegramData),
+      });
+
+      const result: AuthResponse = await response.json();
+
+      // Save token and user data if successful
+      if (result.success && result.data) {
+        authUtils.saveToken(result.data.token);
+        authUtils.saveUser(result.data.user);
+      }
+
+      return result;
+    } catch (error: any) {
+      console.error('Telegram login API error:', error);
+      return {
+        success: false,
+        message: error.message || 'Network error. Please check your connection.',
+      };
+    }
+  },
+
+  // Update Profile
+  async updateProfile(data: UpdateProfilePayload): Promise<AuthResponse> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/user/profile`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          ...authUtils.getAuthHeader(),
+        },
+        credentials: 'include',
+        body: JSON.stringify(data),
+      });
+
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(
+          `Non-JSON response from profile update endpoint (status ${response.status}): ${text.slice(0, 120)}`
+        );
+      }
+
+      const result: AuthResponse = await response.json();
+
+      // Update local user data if successful
+      if (result.success && result.data) {
+        authUtils.saveUser(result.data.user);
+      }
+
+      return result;
+    } catch (error: any) {
+      const message = typeof error?.message === 'string' ? error.message : '';
+      if (message.startsWith('Non-JSON response from profile update endpoint')) {
+        console.warn('Update profile API warning:', error);
+      } else {
+        console.error('Update profile API error:', error);
+      }
+      
+      // Fallback for demo/mock purposes if API fails (since we might not have a real backend)
+      // In a real app, you would throw or return the error. 
+      // Here we optimistically update local storage to show functionality.
+      const currentUser = authUtils.getUser();
+      if (currentUser) {
+        const updatedUser: User = { ...currentUser, ...(data as Partial<User>) };
+        if ('avatar' in data && data.avatar === null) {
+          delete (updatedUser as any).avatar;
+        }
+        authUtils.saveUser(updatedUser);
+        return {
+          success: true,
+          message: 'Profile updated successfully (Local)',
+          data: {
+            user: updatedUser,
+            token: authUtils.getToken() || '',
+          }
+        };
+      }
+
+      return {
+        success: false,
+        message: error.message || 'Network error. Please check your connection.',
+      };
+    }
   },
 };

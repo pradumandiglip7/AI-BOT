@@ -319,8 +319,59 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={() => {
-                  // handleTelegramSignUp - to be implemented separately
-                  if (process.env.NODE_ENV !== 'production') console.debug("Telegram signup clicked");
+                  // Open Telegram auth in a popup window
+                  const popup = window.open(
+                    '',
+                    'telegram_auth',
+                    'width=600,height=700'
+                  );
+                  
+                  if (popup) {
+                    // Load the Telegram auth page in the popup
+                    popup.document.write(`
+                      <!DOCTYPE html>
+                      <html>
+                      <head>
+                        <title>Telegram Login</title>
+                      </head>
+                      <body style="background: #0B0E14; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+                        <script async src="https://telegram.org/js/telegram-widget.js?22" 
+                          data-telegram-login="${process.env.NEXT_PUBLIC_TELEGRAM_BOT_USERNAME || 'YOUR_BOT_USERNAME'}" 
+                          data-size="large" 
+                          data-onauth="window.opener.handleTelegramAuth(user)" 
+                          data-request-access="write">
+                        </script>
+                        <script>
+                          // Define the callback function in the popup
+                          window.handleTelegramAuth = function(user) {
+                            window.opener.postMessage({ type: 'telegram_auth_success', user }, window.location.origin);
+                            window.close();
+                          };
+                        </script>
+                      </body>
+                      </html>
+                    `);
+                  }
+                  
+                  // Listen for the auth success message
+                  const handleMessage = async (event: MessageEvent) => {
+                    if (event.data.type === 'telegram_auth_success') {
+                      window.removeEventListener('message', handleMessage);
+                      
+                      try {
+                        const result = await authAPI.telegramLogin(event.data.user);
+                        if (result.success) {
+                          router.push('/dashboard');
+                        } else {
+                          setError(result.message || 'Telegram signup failed');
+                        }
+                      } catch (err: any) {
+                        setError(err.message || 'An error occurred during Telegram signup');
+                      }
+                    }
+                  };
+                  
+                  window.addEventListener('message', handleMessage);
                 }}
                 aria-label="Sign up with Telegram"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-[#229ED9] border border-gray-700 rounded-lg text-white hover:bg-[#1b8bb8] active:bg-[#187ca1] transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-[#229ED9]"

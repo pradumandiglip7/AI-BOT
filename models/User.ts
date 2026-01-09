@@ -8,8 +8,11 @@ export interface IUser extends Document {
   password?: string;
   role: 'trader' | 'admin';
   googleId?: string;
+  telegramId?: string;
   googleRefreshToken?: string;
   avatar?: string;
+  phone?: string;
+  timezone?: string;
   isVerified?: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -51,12 +54,25 @@ const UserSchema = new Schema<IUser>(
       unique: true,
       sparse: true, // Allows null values but ensures uniqueness for non-null values
     },
+    telegramId: {
+      type: String,
+      unique: true,
+      sparse: true, // Allows null values but ensures uniqueness for non-null values
+    },
     googleRefreshToken: {
       type: String,
       select: false,
     },
     avatar: {
       type: String,
+    },
+    phone: {
+      type: String,
+      trim: true,
+    },
+    timezone: {
+      type: String,
+      trim: true,
     },
     isVerified: {
       type: Boolean,

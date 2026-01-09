@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
-import { authAPI, authUtils, User } from '@/lib/api/auth';
+import { authAPI, authUtils, type UpdateProfilePayload, User } from '@/lib/api/auth';
 import { useRouter } from 'next/navigation';
 
 interface UseAuthReturn {
@@ -9,6 +9,7 @@ interface UseAuthReturn {
   isLoading: boolean;
   login: (email: string, password: string) => Promise<{ success: boolean; message: string }>;
   signup: (data: { fullName: string; email: string; password: string; confirmPassword: string }) => Promise<{ success: boolean; message: string }>;
+  updateProfile: (data: UpdateProfilePayload) => Promise<{ success: boolean; message: string }>;
   logout: () => void;
   verifyToken: () => Promise<boolean>;
 }
@@ -30,6 +31,34 @@ export function useAuth(): UseAuthReturn {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleUserEvent = (event: Event) => {
+      const customEvent = event as CustomEvent<User | null>;
+      setUser(customEvent.detail);
+    };
+
+    const handleStorageEvent = (event: StorageEvent) => {
+      if (event.key !== 'user') return;
+      if (!event.newValue) {
+        setUser(null);
+        return;
+      }
+
+      try {
+        setUser(JSON.parse(event.newValue) as User);
+      } catch {
+        setUser(null);
+      }
+    };
+
+    window.addEventListener('auth:user', handleUserEvent as EventListener);
+    window.addEventListener('storage', handleStorageEvent);
+    return () => {
+      window.removeEventListener('auth:user', handleUserEvent as EventListener);
+      window.removeEventListener('storage', handleStorageEvent);
+    };
+  }, []);
 
   // Verify token
   const verifyToken = useCallback(async (): Promise<boolean> => {
@@ -100,6 +129,20 @@ export function useAuth(): UseAuthReturn {
     }
   }, []);
 
+  // Update Profile
+  const updateProfile = useCallback(async (data: UpdateProfilePayload): Promise<{ success: boolean; message: string }> => {
+    try {
+      const result = await authAPI.updateProfile(data);
+      if (result.success && result.data) {
+        setUser(result.data.user);
+        return { success: true, message: result.message };
+      }
+      return { success: false, message: result.message };
+    } catch (error: any) {
+      return { success: false, message: error.message || 'Update failed' };
+    }
+  }, []);
+
   // Logout
   const logout = useCallback(() => {
     authAPI.logout();
@@ -113,6 +156,7 @@ export function useAuth(): UseAuthReturn {
     isLoading,
     login,
     signup,
+    updateProfile,
     logout,
     verifyToken,
   };

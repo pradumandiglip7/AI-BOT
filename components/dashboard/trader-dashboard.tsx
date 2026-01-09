@@ -68,7 +68,7 @@ export const TraderDashboard: React.FC<{ initialActiveTab?: string }> = ({ initi
         menuItems={menuItems}
         userName={user ? user?.fullName : ""}
         userRole="Premium Trader"
-        userAvatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"
+        userAvatar={user?.avatar || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop"}
       />
       <TopNavbar userName={user?.fullName || "Trader"} notifications={5} />
       <div className="lg:ml-64 mt-16 lg:mt-20 p-4 sm:p-6">

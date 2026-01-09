@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, type ChangeEvent } from "react";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -30,7 +31,7 @@ type Toast = {
   type: "success" | "error" | "info";
 };
 
-export const SettingsContent: React.FC = () => {
+export const SettingsContent = () => {
   const [activeSection, setActiveSection] = useState<Section>("profile");
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [theme, setTheme] = useState<"dark" | "light">("dark");
@@ -55,11 +56,11 @@ export const SettingsContent: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className={`w-full transition-colors ${theme === "dark" ? "bg-gray-950 text-white" : "bg-white text-gray-950"}`}>
+    <div className={`w-full transition-colors ${theme === "dark" ? "bg-transparent text-white" : "bg-white text-gray-950"}`}>
       <div className="flex flex-col lg:flex-row">
         {/* Left menu inside settings */}
-        <div className={`w-full lg:w-64 border-b lg:border-b-0 lg:border-r ${theme === "dark" ? "border-gray-800 bg-gray-900" : "border-gray-200 bg-gray-50"} ${!mobileMenuOpen ? "hidden lg:block" : "block"}`}>
-          <div className="p-4 sm:p-6 border-b border-gray-800 flex items-center justify-between">
+        <div className={`w-full lg:w-64 border-b lg:border-b-0 lg:border-r ${theme === "dark" ? "border-white/10 bg-black/20 backdrop-blur-xl" : "border-gray-200 bg-gray-50"} ${!mobileMenuOpen ? "hidden lg:block" : "block"}`}>
+          <div className={`p-4 sm:p-6 border-b ${theme === "dark" ? "border-white/10" : "border-gray-800"} flex items-center justify-between`}>
             <h1 className="text-xl sm:text-2xl font-bold">Settings</h1>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -100,7 +101,7 @@ export const SettingsContent: React.FC = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden p-4 border-b border-gray-800">
+        <div className={`lg:hidden p-4 border-b ${theme === "dark" ? "border-white/10" : "border-gray-800"}`}>
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700"
@@ -152,10 +153,117 @@ export const SettingsContent: React.FC = () => {
 };
 
 const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "success" | "error" | "info") => void; theme: string }) => {
-  const [profile, setProfile] = useState({ name: "Alex Thompson", email: "alex@trading.com", phone: "+1 234-567-8900", timezone: "UTC-5" });
+  const { user, updateProfile } = useAuth();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  
+  const [profile, setProfile] = useState({ 
+    name: "", 
+    email: "", 
+    phone: "", 
+    timezone: "UTC-5" 
+  });
 
-  const handleSave = () => {
-    addToast("Profile updated successfully!", "success");
+  const [isSaving, setIsSaving] = useState(false);
+  const [isAvatarUpdating, setIsAvatarUpdating] = useState(false);
+
+  // Initialize form with user data
+  useEffect(() => {
+    if (user) {
+      setProfile({
+        name: user.fullName || "",
+        email: user.email || "",
+        phone: user.phone || "",
+        timezone: user.timezone || "UTC-5"
+      });
+    }
+  }, [user]);
+
+  const handleSave = async () => {
+    if (!user) return;
+    
+    setIsSaving(true);
+    try {
+      const result = await updateProfile({
+        fullName: profile.name,
+        email: profile.email,
+        phone: profile.phone,
+        timezone: profile.timezone
+      });
+      
+      if (result.success) {
+        addToast("Profile updated successfully!", "success");
+      } else {
+        addToast(result.message || "Failed to update profile", "error");
+      }
+    } catch (error) {
+      addToast("An error occurred while saving", "error");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleCancel = () => {
+    if (user) {
+      setProfile({
+        name: user.fullName || "",
+        email: user.email || "",
+        phone: user.phone || "",
+        timezone: user.timezone || "UTC-5"
+      });
+      addToast("Changes cancelled", "info");
+    }
+  };
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) { // 5MB limit
+        addToast("File size too large (max 5MB)", "error");
+        e.target.value = "";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onloadend = async () => {
+        const base64String = reader.result as string;
+        setIsAvatarUpdating(true);
+        try {
+          const result = await updateProfile({ avatar: base64String });
+          if (result.success) {
+            addToast("Profile picture updated!", "success");
+          } else {
+            addToast(result.message || "Failed to update profile picture", "error");
+          }
+        } catch (error) {
+          addToast("Failed to update profile picture", "error");
+        } finally {
+          setIsAvatarUpdating(false);
+          e.target.value = "";
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const triggerFileUpload = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleDeleteAvatar = async () => {
+    if (!user?.avatar) return;
+    setIsAvatarUpdating(true);
+    try {
+      const result = await updateProfile({ avatar: null });
+      if (result.success) {
+        addToast("Profile picture removed!", "success");
+      } else {
+        addToast(result.message || "Failed to remove profile picture", "error");
+      }
+    } catch (error) {
+      addToast("Failed to remove profile picture", "error");
+    } finally {
+      setIsAvatarUpdating(false);
+    }
   };
 
   return (
@@ -169,12 +277,36 @@ const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "s
         <div className="mb-6">
           <label className="block text-sm font-semibold mb-3">Profile Picture</label>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <div className={`w-24 h-24 rounded-full ${theme === "dark" ? "bg-gradient-to-br from-blue-500 to-purple-500" : "bg-blue-200"} flex items-center justify-center text-4xl font-bold`}>
-              AT
+            <div className={`w-24 h-24 rounded-full ${theme === "dark" ? "bg-gradient-to-br from-blue-500 to-purple-500" : "bg-blue-200"} flex items-center justify-center overflow-hidden`}>
+              {user?.avatar ? (
+                <img src={user.avatar} alt="Profile" className="w-full h-full object-cover" />
+              ) : (
+                <span className="text-4xl font-bold">{profile.name.substring(0, 2).toUpperCase() || "US"}</span>
+              )}
             </div>
-            <button className={`px-4 py-2 rounded-lg flex items-center gap-2 ${theme === "dark" ? "bg-white/10 hover:bg-white/15" : "bg-gray-200 hover:bg-gray-300"}`}>
+            <input 
+              type="file" 
+              ref={fileInputRef} 
+              className="hidden" 
+              accept="image/*"
+              onChange={handleFileChange}
+            />
+            <button 
+              onClick={triggerFileUpload}
+              disabled={isSaving || isAvatarUpdating}
+              className={`px-4 py-2 rounded-lg flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed ${theme === "dark" ? "bg-white/10 hover:bg-white/15" : "bg-gray-200 hover:bg-gray-300"}`}
+            >
               <Upload className="w-4 h-4" /> Upload Picture
             </button>
+            {user?.avatar && (
+              <button
+                onClick={handleDeleteAvatar}
+                disabled={isSaving || isAvatarUpdating}
+                className={`px-4 py-2 rounded-lg flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed ${theme === "dark" ? "bg-red-500/15 hover:bg-red-500/20 text-red-300" : "bg-red-50 hover:bg-red-100 text-red-600"}`}
+              >
+                <Trash2 className="w-4 h-4" /> Remove
+              </button>
+            )}
           </div>
         </div>
 
@@ -205,19 +337,24 @@ const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "s
               type="tel"
               value={profile.phone}
               onChange={(e) => setProfile((p) => ({ ...p, phone: e.target.value }))}
+              placeholder="+1 234-567-8900"
               className={`w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`}
             />
           </div>
 
           <div>
             <label className="block text-sm font-semibold mb-2">Timezone</label>
-            <select className={`w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`}>
-              <option>UTC-5 (EST)</option>
-              <option>UTC-6 (CST)</option>
-              <option>UTC-7 (MST)</option>
-              <option>UTC-8 (PST)</option>
-              <option>UTC+0 (GMT)</option>
-              <option>UTC+1 (CET)</option>
+            <select 
+              value={profile.timezone}
+              onChange={(e) => setProfile((p) => ({ ...p, timezone: e.target.value }))}
+              className={`w-full px-4 py-2 rounded-lg border ${theme === "dark" ? "bg-white/5 border-gray-700" : "bg-white border-gray-300"}`}
+            >
+              <option value="UTC-5">UTC-5 (EST)</option>
+              <option value="UTC-6">UTC-6 (CST)</option>
+              <option value="UTC-7">UTC-7 (MST)</option>
+              <option value="UTC-8">UTC-8 (PST)</option>
+              <option value="UTC+0">UTC+0 (GMT)</option>
+              <option value="UTC+1">UTC+1 (CET)</option>
             </select>
           </div>
         </div>
@@ -225,11 +362,16 @@ const ProfileSection = ({ addToast, theme }: { addToast: (msg: string, type?: "s
         <div className="flex gap-3 mt-6">
           <button
             onClick={handleSave}
-            className={`px-6 py-2 rounded-lg font-semibold ${theme === "dark" ? "bg-blue-500 hover:bg-blue-600" : "bg-blue-600 hover:bg-blue-700"} text-white`}
+            disabled={isSaving}
+            className={`px-6 py-2 rounded-lg font-semibold ${theme === "dark" ? "bg-blue-500 hover:bg-blue-600" : "bg-blue-600 hover:bg-blue-700"} text-white disabled:opacity-50 disabled:cursor-not-allowed`}
           >
-            Save Changes
+            {isSaving ? "Saving..." : "Save Changes"}
           </button>
-          <button className={`px-6 py-2 rounded-lg font-semibold ${theme === "dark" ? "bg-white/10 hover:bg-white/15" : "bg-gray-200 hover:bg-gray-300"}`}>
+          <button 
+            onClick={handleCancel}
+            disabled={isSaving}
+            className={`px-6 py-2 rounded-lg font-semibold ${theme === "dark" ? "bg-white/10 hover:bg-white/15" : "bg-gray-200 hover:bg-gray-300"} disabled:opacity-50 disabled:cursor-not-allowed`}
+          >
             Cancel
           </button>
         </div>

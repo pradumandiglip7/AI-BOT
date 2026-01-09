@@ -52,6 +52,8 @@ export async function POST(request: NextRequest) {
       email: user.email,
       role: user.role,
       avatar: user.avatar,
+      phone: (user as any).phone,
+      timezone: (user as any).timezone,
       createdAt: user.createdAt,
     };
 

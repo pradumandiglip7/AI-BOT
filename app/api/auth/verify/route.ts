@@ -34,6 +34,8 @@ export async function GET(request: NextRequest) {
       email: user.email,
       role: user.role,
       avatar: user.avatar,
+      phone: (user as any).phone,
+      timezone: (user as any).timezone,
       createdAt: user.createdAt,
     };
 

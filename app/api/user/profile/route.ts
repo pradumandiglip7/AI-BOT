@@ -93,6 +93,16 @@ export async function PUT(request: NextRequest) {
       setUpdates.email = email;
     }
 
+    // Allow admin to update isVerified status
+    if (typeof (body as any).isVerified === 'boolean') {
+      // Check if the requesting user is an admin
+      const requestingUser = await User.findById(payload.userId);
+      if (!requestingUser || requestingUser.role !== 'admin') {
+        return NextResponse.json({ success: false, message: "Only admins can update user verification status" }, { status: 403 });
+      }
+      setUpdates.isVerified = (body as any).isVerified;
+    }
+
     const updateQuery: Record<string, unknown> = {};
     if (Object.keys(setUpdates).length > 0) updateQuery.$set = setUpdates;
     if (Object.keys(unsetUpdates).length > 0) updateQuery.$unset = unsetUpdates;

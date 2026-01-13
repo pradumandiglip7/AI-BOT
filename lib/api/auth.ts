@@ -9,8 +9,10 @@ export interface User {
   role: 'trader' | 'admin';
   avatar?: string;
   createdAt: string;
+  lastLoginAt?: string;
   phone?: string;
   timezone?: string;
+  isVerified?: boolean;
 }
 
 export interface AuthResponse {

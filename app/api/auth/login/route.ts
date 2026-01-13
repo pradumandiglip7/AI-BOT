@@ -38,6 +38,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Update last login timestamp
+    user.lastLoginAt = new Date();
+    await user.save();
+    
     // Generate JWT token
     const token = generateToken({
       userId: user._id.toString(),
@@ -54,6 +58,7 @@ export async function POST(request: NextRequest) {
       avatar: user.avatar,
       phone: (user as any).phone,
       timezone: (user as any).timezone,
+      lastLoginAt: user.lastLoginAt,
       createdAt: user.createdAt,
     };
 

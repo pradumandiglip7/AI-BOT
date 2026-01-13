@@ -11,6 +11,8 @@ import { authAPI } from "@/lib/api/auth";
 export default function SignupPage() {
   const router = useRouter();
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -227,13 +229,33 @@ export default function SignupPage() {
                   <input
                     id="password"
                     name="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="••••••••"
                     value={formData.password}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-11 pr-12 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300 focus:outline-none"
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye-off">
+                        <path d="M10.733 5.076a.75.75 0 0 1 1.034 0 19.5 19.5 0 0 1 4.206 6.493c.51.665.86 1.417 1.034 2.222a.75.75 0 0 1-1.034.038 15 15 0 0 0-3.236-4.5 6 6 0 0 0-6 0 15 15 0 0 0-1.204 1.6 15 15 0 0 0-1.241 1.603.75.75 0 0 1-1.273-.014 19.5 19.5 0 0 1 2.15-3.177 19.64 19.64 0 0 1 4.206-3.471Z" />
+                        <path d="M13.12 15.49a.75.75 0 0 1 1.06 0 4.5 4.5 0 0 1 0 6.362.75.75 0 0 1-1.06-.001 4.5 4.5 0 0 1 0-6.36Z" />
+                        <path d="M15.22 17.52a.75.75 0 0 1 1.06 0 4.5 4.5 0 0 1 0 6.363.75.75 0 0 1-1.06-.001 4.5 4.5 0 0 1 0-6.362Z" />
+                        <path d="M5.433 18.62a19.51 19.51 0 0 1-1.22-1.52.75.75 0 1 1 .988-1.15 18 18 0 0 0 5.074 5.92.75.75 0 0 1-1.06 1.06 19.5 19.5 0 0 1-3.782-5.31Z" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye">
+                        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0Z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
               </div>
 
@@ -247,13 +269,33 @@ export default function SignupPage() {
                   <input
                     id="confirmPassword"
                     name="confirmPassword"
-                    type="password"
+                    type={showConfirmPassword ? "text" : "password"}
                     placeholder="••••••••"
                     value={formData.confirmPassword}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-11 pr-12 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300 focus:outline-none"
+                    aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+                  >
+                    {showConfirmPassword ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye-off">
+                        <path d="M10.733 5.076a.75.75 0 0 1 1.034 0 19.5 19.5 0 0 1 4.206 6.493c.51.665.86 1.417 1.034 2.222a.75.75 0 0 1-1.034.038 15 15 0 0 0-3.236-4.5 6 6 0 0 0-6 0 15 15 0 0 0-1.204 1.6 15 15 0 0 0-1.241 1.603.75.75 0 0 1-1.273-.014 19.5 19.5 0 0 1 2.15-3.177 19.64 19.64 0 0 1 4.206-3.471Z" />
+                        <path d="M13.12 15.49a.75.75 0 0 1 1.06 0 4.5 4.5 0 0 1 0 6.362.75.75 0 0 1-1.06-.001 4.5 4.5 0 0 1 0-6.36Z" />
+                        <path d="M15.22 17.52a.75.75 0 0 1 1.06 0 4.5 4.5 0 0 1 0 6.363.75.75 0 0 1-1.06-.001 4.5 4.5 0 0 1 0-6.362Z" />
+                        <path d="M5.433 18.62a19.51 19.51 0 0 1-1.22-1.52.75.75 0 1 1 .988-1.15 18 18 0 0 0 5.074 5.92.75.75 0 0 1-1.06 1.06 19.5 19.5 0 0 1-3.782-5.31Z" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-eye">
+                        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0Z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
               </div>
 

@@ -5,8 +5,10 @@ import { AdminDashboard } from "@/components/dashboard/admin-dashboard";
 import { TraderDashboard } from "@/components/dashboard/trader-dashboard";
 import { GradientBackground } from "@/components/ui/gradient-background";
 import { authAPI } from "@/lib/api/auth";
+import { useAuth } from "@/lib/hooks/useAuth";
 
 export default function DashboardPage() {
+  const {user} = useAuth();
   const [userRole, setUserRole] = useState<"admin" | "trader">("trader");
 
   // Verify session with server on mount (cookie-based auth)
@@ -33,7 +35,7 @@ export default function DashboardPage() {
     >
       <div className="min-h-screen w-full">
         {/* Role Switcher (For Demo) */}
-        <div className="fixed top-20 right-6 z-50 flex gap-2">
+        {/* <div className="fixed top-20 right-6 z-50 flex gap-2">
           <button
             onClick={() => setUserRole("trader")}
             className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
@@ -54,9 +56,9 @@ export default function DashboardPage() {
           >
             Admin View
           </button>
-        </div>
+        </div> */}
 
-        {userRole === "admin" ? <AdminDashboard /> : <TraderDashboard />}
+        {user?.role === "admin" ? <AdminDashboard /> : <TraderDashboard />}
       </div>
     </GradientBackground>
   );

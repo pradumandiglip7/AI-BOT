@@ -58,6 +58,10 @@ export async function POST(request: NextRequest) {
       role: 'trader', // Default role
     });
 
+    // Update last login timestamp (first login)
+    user.lastLoginAt = new Date();
+    await user.save();
+    
     // Generate JWT token
     const token = generateToken({
       userId: user._id.toString(),

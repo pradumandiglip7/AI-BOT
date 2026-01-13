@@ -14,6 +14,7 @@ export interface IUser extends Document {
   phone?: string;
   timezone?: string;
   isVerified?: boolean;
+  lastLoginAt?: Date;
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -77,6 +78,9 @@ const UserSchema = new Schema<IUser>(
     isVerified: {
       type: Boolean,
       default: false,
+    },
+    lastLoginAt: {
+      type: Date,
     },
   },
   {

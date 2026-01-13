@@ -1,28 +1,41 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
 import { Users, TrendingUp, Target } from "lucide-react";
+import { authUtils } from "@/lib/api/auth";
+
+type StatCard = {
+  label: string;
+  value: string;
+  change: string;
+  icon: any;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+};
+
+type UserGrowthPoint = { month: string; users: number };
+type TrafficSourcePoint = { source: string; visitors: number };
 
 export const AdminAnalytics = () => {
-  // Mock data for User Growth (last 6 months)
-  const userGrowthData = [
+  const [userGrowthData, setUserGrowthData] = useState<UserGrowthPoint[]>([
     { month: "Jul", users: 5200 },
     { month: "Aug", users: 6800 },
     { month: "Sep", users: 7800 },
     { month: "Oct", users: 9200 },
     { month: "Nov", users: 10500 },
     { month: "Dec", users: 12847 },
-  ];
+  ]);
 
-  // Mock data for Traffic Sources
-  const trafficSourcesData = [
+  const [trafficSourcesData, setTrafficSourcesData] = useState<TrafficSourcePoint[]>([
     { source: "Direct", visitors: 4520 },
     { source: "Referral", visitors: 3200 },
     { source: "Social", visitors: 2127 },
-  ];
+  ]);
 
-  const stats = [
+  const [stats, setStats] = useState<StatCard[]>([
     {
       label: "Total Signups",
       value: "12,847",
@@ -50,7 +63,94 @@ export const AdminAnalytics = () => {
       bgColor: "bg-cyan-400/20",
       borderColor: "border-cyan-400/50",
     },
-  ];
+  ]);
+
+  const refreshTimer = useRef<NodeJS.Timeout | null>(null);
+
+  async function fetchAnalytics() {
+    try {
+      const headers = {
+        "Content-Type": "application/json",
+        ...authUtils.getAuthHeader(),
+      };
+
+      const [summaryRes, growthRes, sourcesRes] = await Promise.allSettled([
+        fetch("/api/admin/analytics/summary", { headers, cache: "no-store" }),
+        fetch("/api/admin/analytics/user-growth?months=6", { headers, cache: "no-store" }),
+        fetch("/api/admin/analytics/traffic-sources", { headers, cache: "no-store" }),
+      ]);
+
+      if (summaryRes.status === "fulfilled" && summaryRes.value.ok) {
+        const json = await summaryRes.value.json();
+        const totalSignups = json?.data?.totalSignups;
+        const premiumConversionRate = json?.data?.premiumConversionRate;
+        const signalAccuracy = json?.data?.signalAccuracy;
+        const change = json?.data?.change || {};
+
+        setStats([
+          {
+            label: "Total Signups",
+            value: typeof totalSignups === "number" ? totalSignups.toLocaleString() : "—",
+            change: typeof change.totalSignups === "string" ? change.totalSignups : "+0%",
+            icon: Users,
+            color: "text-primary",
+            bgColor: "bg-primary/20",
+            borderColor: "border-primary/50",
+          },
+          {
+            label: "Premium Conversions",
+            value: typeof premiumConversionRate === "number" ? `${premiumConversionRate.toFixed(1)}%` : "—",
+            change: typeof change.premiumConversionRate === "string" ? change.premiumConversionRate : "+0%",
+            icon: TrendingUp,
+            color: "text-accent",
+            bgColor: "bg-accent/20",
+            borderColor: "border-accent/50",
+          },
+          {
+            label: "Signal Accuracy",
+            value: typeof signalAccuracy === "number" ? `${signalAccuracy.toFixed(1)}%` : "—",
+            change: typeof change.signalAccuracy === "string" ? change.signalAccuracy : "+0%",
+            icon: Target,
+            color: "text-cyan-400",
+            bgColor: "bg-cyan-400/20",
+            borderColor: "border-cyan-400/50",
+          },
+        ]);
+      }
+
+      if (growthRes.status === "fulfilled" && growthRes.value.ok) {
+        const json = await growthRes.value.json();
+        const points: UserGrowthPoint[] = Array.isArray(json?.data)
+          ? json.data.map((p: any) => ({
+              month: String(p.month),
+              users: Number(p.users) || 0,
+            }))
+          : [];
+        if (points.length) setUserGrowthData(points);
+      }
+
+      if (sourcesRes.status === "fulfilled" && sourcesRes.value.ok) {
+        const json = await sourcesRes.value.json();
+        const points: TrafficSourcePoint[] = Array.isArray(json?.data)
+          ? json.data.map((p: any) => ({
+              source: String(p.source),
+              visitors: Number(p.visitors) || 0,
+            }))
+          : [];
+        if (points.length) setTrafficSourcesData(points);
+      }
+    } catch {
+      // Silent fallback to existing mock values
+    }
+  }
+
+  useEffect(() => {
+    fetchAnalytics();
+    refreshTimer.current = setInterval(fetchAnalytics, 60000);
+    return () => {
+      if (refreshTimer.current) clearInterval(refreshTimer.current);
+    };
+  }, []);
 
   return (
     <motion.div

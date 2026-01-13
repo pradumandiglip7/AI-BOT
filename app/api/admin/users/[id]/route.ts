@@ -4,7 +4,7 @@ import dbConnect from '@/lib/db';
 import User from '@/models/User';
 
 // DELETE /api/admin/users/[id] - Delete a user by ID (admin only)
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
     // Verify admin authentication
     const payload = verifyAuthToken(request);
@@ -26,7 +26,8 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
 
     await dbConnect();
 
-    const userId = params.id;
+    const { id } = await context.params;
+    const userId = id;
 
     // Prevent admin from deleting themselves
     if (userId === payload.userId) {
@@ -88,7 +89,8 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 
     await dbConnect();
 
-    const userId = params.id;
+    const { id } = await context.params;
+    const userId = id;
     const body = await request.json();
 
     // Find the user to update

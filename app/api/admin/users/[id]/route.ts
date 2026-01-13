@@ -67,7 +67,7 @@ export async function DELETE(request: NextRequest, context: { params: Promise<{ 
 }
 
 // PUT /api/admin/users/[id] - Update user details (admin only)
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, context: { params: Promise<{ id: string }> }) {
   try {
     // Verify admin authentication
     const payload = verifyAuthToken(request);
